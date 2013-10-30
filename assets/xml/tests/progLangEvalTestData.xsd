@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.systemsinmotion.com/hiring/technical/progLangEvalTestData.xsd" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ple="http://www.systemsinmotion.com/hiring/technical/progLangEvalTestData.xsd">
+
+    <element name="test" type="ple:test"></element>
+    
+    <complexType name="test">
+    	<sequence>
+    		<element name="intro" type="string"></element>
+    		<element name="questions" type="ple:questions"></element>
+    	</sequence>
+    	<attribute name="type" type="string" use="required"></attribute>
+    	<attribute name="id" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="questions">
+    	<sequence>
+    		<element name="question" type="ple:question"
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="question">
+    	<sequence>
+    		<element name="text" type="ple:text" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="answers" type="ple:answers" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    	</sequence>
+    	<attribute name="id" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="answers">
+    	<sequence>
+    		<element name="answer" type="ple:answer" minOccurs="2"
+    			maxOccurs="unbounded">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="answer">
+    	<complexContent>
+    		<extension base="ple:text">
+    			<attribute name="correct" type="boolean"></attribute>
+    			<attribute name="id" type="string" use="required"></attribute>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+
+    <complexType name="text" mixed="true">
+    	<sequence>
+    		<any minOccurs="0" maxOccurs="unbounded" processContents="lax"></any>
+    	</sequence>
+    </complexType>
+</schema>

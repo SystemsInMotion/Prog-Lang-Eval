@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ple:test id="java_1.0" type="Java"
+	xmlns:ple="http://www.systemsinmotion.com/hiring/technical/progLangEvalTestData.xsd" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.systemsinmotion.com/hiring/technical/progLangEvalTestData.xsd assets/xml/tests/progLangEvalTestData.xsd ">
+
+	<ple:intro>
+		Hi!
+		
+		You're about to take our Java test! It's not a super long test, but Java's a big langauge so we cover a lot of different topics.
+		
+		Don't worry; we're not going to make any decisions based on this test alone. It just gives us a way to get an idea how much Java you know so we can make the best decision about where you might fit in our company.
+		
+		Please take careful note of the grading guidelines. They are available to look at any time.
+		The important thing to remember is that while you want to answer as many questions as you can, if you really don't know, that's fine. Just leave it blank and it won't count against you.
+	</ple:intro>
+	
+	<ple:questions>
+		<ple:question id="1">
+			<ple:text>When comparing two String variables, what will the '==' operator do?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="01">Compare the strings case-sensitive and return true if they are the same sequence of characters.</ple:answer>
+				<ple:answer id="02">Compare the strings case-insensitive and return true if they are the same sequence of characters.</ple:answer>
+				<ple:answer id="03" correct="true">Compare the object references of the strings to see if they are identical.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="2">
+			<ple:text>
+				What is the output of this code segment?
+				<code> 
+int i = 0;
+System.out.println("value: " + i++);
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="04" correct="true"> value: 0</ple:answer>
+				<ple:answer id="05">value: 1</ple:answer>
+				<ple:answer id="06">value: 2</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="3">
+			<ple:text>Which are valid ways to create a new string Object?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="07">String strNew;</ple:answer>
+				<ple:answer id="08" correct="true">String strNew = "hello";</ple:answer>
+				<ple:answer id="09" correct="true">String strNew = new String("hey");</ple:answer>
+				<ple:answer id="0A" correct="true">String strNew = new String();</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="4">
+			<ple:text>Given a method: protected void foo(), which classes will have access to it?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="0B">Any class in the project.</ple:answer>
+				<ple:answer id="0C" correct="true">Any class in the same package.</ple:answer>
+				<ple:answer id="0D">Only the class it is contained in.</ple:answer>
+				<ple:answer id="0E">Only the classes within the defined security specification.</ple:answer>
+				<ple:answer id="0F" correct="true">Any subclass of the class it is contained in.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="5">
+			<ple:text>Which statements are true about the value of a variable, when no explicit assignments have been made?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="10">The value of a variable of type int is undetermined.</ple:answer>
+				<ple:answer id="11" correct="true">The value of a variable of any numeric type is zero.</ple:answer>
+				<ple:answer id="12">The compiler may issue an error if the variable is used in a method before it is initialized.</ple:answer>
+				<ple:answer id="13">A variable of type String will denote the empty String("")</ple:answer>
+				<ple:answer id="14" correct="true">The value of all variables which are references is null.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="6">
+			<ple:text>In Java's object model, a class can have multiple ______ but only a single direct ______</ple:text>
+
+			<ple:answers>
+				<ple:answer id="15">Interfaces, child</ple:answer>
+				<ple:answer id="16">Children, parent</ple:answer>
+				<ple:answer id="17" correct="true">Interfaces, parent</ple:answer>
+				<ple:answer id="18">Parents, interface</ple:answer>
+				<ple:answer id="19">None of the above.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="7">
+			<ple:text>Which statements describe guaranteed behavior of the garbage collection and finalization mechanisms?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="1A">An object is deleted as soon as there are no more references that denote the object.</ple:answer>
+				<ple:answer id="1B">The finalize() method will eventually be called on every object.</ple:answer>
+				<ple:answer id="1C" correct="true">The finalize() method will never be called more than once on an object.</ple:answer>
+				<ple:answer id="1D" correct="true">An object will not be garbage collected as long as it is possible for a thread to access it through a reference.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="8">
+			<ple:text>Which statement is true?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="1E">Top-level classes can be declared static.</ple:answer>
+				<ple:answer id="1F" correct="true">Classes declared as members of top-level classes can be declared static.</ple:answer>
+				<ple:answer id="20">Local classes can be declared static.</ple:answer>
+				<ple:answer id="21">Anonymous classes can be declared static.</ple:answer>
+				<ple:answer id="22">NO classes can be declared static.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="9">
+			<ple:text>Which statements are true?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="23" correct="true">No other static members, except final static fields, can be declared within a non-static member class.</ple:answer>
+				<ple:answer id="24">If a non-static member class is nested within a class named Outer, then methods within the non-static member class must use the prefix Outer.this</ple:answer>
+				<ple:answer id="25">All fields in any nested class must be declared final.</ple:answer>
+				<ple:answer id="26" correct="true">Anonymous classes cannot have constructors.</ple:answer>
+				<ple:answer id="27">If objRef is an instance of any nested class within the class Outer, then the expression (objRef instanceOf Outer) will evaluate to true.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="10">
+			<ple:text>
+				Which statements are true about the relationships between the following classes?
+		
+				<code>
+class Foo {
+	int num;
+	Baz comp = new Baz();
+}
+	
+class Bar {
+	boolean flag;
+}
+
+class Baz extends Foo {
+	Bar thing = new Bar();
+	double limit;
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="28">A Bar is a Baz.</ple:answer>
+				<ple:answer id="29" correct="true">A Foo has a Bar.</ple:answer>
+				<ple:answer id="2A" correct="true">A Baz is a Foo.</ple:answer>
+				<ple:answer id="2B">A Foo is a Baz.</ple:answer>
+				<ple:answer id="2C" correct="true">A Baz has a Bar.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="11">
+			<ple:text>Which statement is true?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="2D">If an exception is thrown during the execution of the finalize() method of an eligible object then the exception is ignored and the object is destroyed</ple:answer>
+				<ple:answer id="2E" correct="true">All objects have a finalize() method.</ple:answer>
+				<ple:answer id="2F">Objects can be destroyed by explicitly calling the finalize() method.</ple:answer>
+				<ple:answer id="30">The finalize() method can be declared with any accessibility.</ple:answer>
+				<ple:answer id="31">The compiler will fail to compile code that defines an overriding finalize() method</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="12">
+			<ple:text>Which statements are true?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="32">If an exception is not caught in a method, the method will terminate and normal execution will resume.</ple:answer>
+				<ple:answer id="33">An overriding method must declare that it throws the same exception classes as the method it overrides.</ple:answer>
+				<ple:answer id="34" correct="true">The main() method of a program can declare that it throws checked exceptions.</ple:answer>
+				<ple:answer id="35" correct="true">A method declaring that it throws a certain exception class may throw instances of any subclass of that exception class.</ple:answer>
+				<ple:answer id="36">Finally blocks are executed if, and only if, an exception gets thrown while inside the corresponding try block.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="13">
+			<ple:text>
+				What will be the result of attempting to compile and run the following program?
+		
+				<code>
+public class MyClass {
+	public static void main(String[] args) {
+		RuntimeException re = null;
+	throw re;
+	}
+}
+				</code>
+		  	</ple:text>
+
+			<ple:answers>
+				<ple:answer id="37">The code will fail to compile, because main() does not declare that it throws a RuntimeException</ple:answer>
+				<ple:answer id="38">The program will fail to compile, since it cannot throw re.</ple:answer>
+				<ple:answer id="39">The program will compile without error and will throw a RunTimeException when run.</ple:answer>
+				<ple:answer id="3A" correct="true">The program will compile without error and will throw a NullPointerException when run.</ple:answer>
+				<ple:answer id="3B">THe program will compile without error and will run and terminate without any output.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="14">
+			<ple:text>
+				What will the output of this program be?
+				<code>
+public class MyClass {
+ 
+ 	//Assume InterruptedException is a direct subclass of Exception.
+	static void f() throws InterruptedException {
+		throw new InterruptedException("All your base.");
+	}
+	
+	public static void main( String[] args) {		
+		try{
+			f();
+		} catch (InterruptedException e)	{
+			System.out.println("IE ");
+			throw new RuntimeException();
+		} catch (RuntimeException e)	{
+			System.out.println("RE ");
+			return;
+		} catch (Exception e) {
+			System.out.println("E ");
+		} finally {
+			System.out.println("F ");
+		}
+		
+		system.out.println("DONE");
+	}
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="3C">DONE</ple:answer>
+				<ple:answer id="3D" correct="true">IE F</ple:answer>
+				<ple:answer id="3E">IE RE E</ple:answer>
+				<ple:answer id="3F">IE F DONE</ple:answer>
+				<ple:answer id="40">IE RE F DONE</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="15">
+			<ple:text>Which statement is true?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="41">The compiler will fail to compile code that explicitly tries to call the finalize() method.</ple:answer>
+				<ple:answer id="42">The finalize() method must be declared with protected accessibility.</ple:answer>
+				<ple:answer id="43">An overriding finalize() method in any classs can always throw checked exceptions.</ple:answer>
+				<ple:answer id="44" correct="true">The finalize() method can be overloaded.</ple:answer>
+				<ple:answer id="45">The body of the finalize() method can only access other objects that are eligible for garbage collection.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="16">
+			<ple:text>Which statements are true about locks?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="46" correct="true">A thread can hold more than one lock at a time.</ple:answer>
+				<ple:answer id="47">Invoking wait() on a Thread object will relinquish all locks held by the thread.</ple:answer>
+				<ple:answer id="48">Invoking wait() on an object whose lock is held by the current thread will relinquish the lock.</ple:answer>
+				<ple:answer id="49">Invoking notify on an object whose lock is held by the current thread will relinquish the lock.</ple:answer>
+				<ple:answer id="4A" correct="true">Multiple threads can hold the same lock at the same time.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="17">
+			<ple:text>Which of these are NOT plausible reasons why a thread might be alive, but still not be running.</ple:text>
+
+			<ple:answers>
+				<ple:answer id="4B">The thread is waiting for some condition as a result of a wait() call.</ple:answer>
+				<ple:answer id="4C" correct="true">The execution has reached the end of the run() method.</ple:answer>
+				<ple:answer id="4D">The thread is waiting to acquire the lock of an object in order to execute a certain method on that object.</ple:answer>
+				<ple:answer id="4E">The thread does not have the highest priority and is currently not executing.</ple:answer>
+				<ple:answer id="4F">The thread is sleeping as a result of a call to the sleep() method.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="18">
+			<ple:text>Which statements are true?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="50">Inheritance defines a <i>has-a</i> relationship between a superclass and its subclasses.</ple:answer>
+				<ple:answer id="51" correct="true">Every Java object has a public method named equals.</ple:answer>
+				<ple:answer id="52">Every Java object has a public method named length.</ple:answer>
+				<ple:answer id="53">A class can extend any number of other classes.</ple:answer>
+				<ple:answer id="54" correct="true">A non-final class can be extended by any number of classes.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="19">
+			<ple:text>
+				Given classes A, B, and C. B extends A. C extends B. All classes implement the instance method 
+				<code>
+void doIt()
+				</code>
+				How can the doIt() method in A be called from an instance method in C?
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="55">doIt()</ple:answer>
+				<ple:answer id="56">super.doIt()</ple:answer>
+				<ple:answer id="57">super.super.doIt()</ple:answer>
+				<ple:answer id="58">this.super.doIt()</ple:answer>
+				<ple:answer id="59" correct="true">It is not possible.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="20">
+			<ple:text>Which statement is true?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="5A">A super() or this() call must always be provided explicitly as the first statement in the body of a constructor</ple:answer>
+				<ple:answer id="5B" correct="true">If both a subclass and its superclass do not have any declared constructors, the implicit default constructor of the subclass will call super() when run.</ple:answer>
+				<ple:answer id="5C">If neither super() nor this() is declared as the first statement in the body of a constructor, then this() will implicitly be inserted as the first statement.</ple:answer>
+				<ple:answer id="5D">If super() is the first statement in the body of a constructor, then this() can be declared as the second statement.</ple:answer>
+				<ple:answer id="5E">Calling super() as the first statement in the body of a constructor of a subclass will always work, since all superclasses have a default constructor.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="21">
+			<ple:text>Which method from the String or StringBuffer classes modifies the object on which it is invoked?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="5F">The charAt() method of the String class</ple:answer>
+				<ple:answer id="60">The toUpperCase() method of the String class</ple:answer>
+				<ple:answer id="61">The replace() method of the String class.</ple:answer>
+				<ple:answer id="62" correct="true">The reverse() method of the StringBuffer class.</ple:answer>
+				<ple:answer id="63">The length() method of the StringBuffer class.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="22">
+			<ple:text>When creating a class that associates a set of keys with a set of values, which of these interfaces is most applicable?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="64">Collection</ple:answer>
+				<ple:answer id="65">Set</ple:answer>
+				<ple:answer id="66">SortedSet</ple:answer>
+				<ple:answer id="67" correct="true">Map</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="23">
+			<ple:text>Given two collection objects referenced by col1 and col2, which statements are true?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="68">The operation col1.retainAll( Col2) will not modify the col1 object.</ple:answer>
+				<ple:answer id="69" correct="true">The operation col1.removeAll( col2) will not modify the col2 object.</ple:answer>
+				<ple:answer id="6A">The operation col1.addAll( col2) will return a new collection object, containing elements from both col1 and col2.</ple:answer>
+				<ple:answer id="6B">The operation col1.ContainsAll(Col2) will modify the col1 object.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="24">
+			<ple:text>Which statements are true about the collection interfaces?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="6C" correct="true">Set extends Collection.</ple:answer>
+				<ple:answer id="6D" correct="true">All methods defined in Set are also defined in Collection.</ple:answer>
+				<ple:answer id="6E" correct="true">List extends Collection.</ple:answer>
+				<ple:answer id="6F">All methods defined in List are also defined in Collection.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="25">
+			<ple:text>Which statement is true?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="70">Non-static member classes must have either default or public accessibility.</ple:answer>
+				<ple:answer id="71">All nested classes can declare static member classes.</ple:answer>
+				<ple:answer id="72" correct="true">Methods in all nested classes can be declared static.</ple:answer>
+				<ple:answer id="73">All nested classes can be declared static.</ple:answer>
+				<ple:answer id="74">Static member classes can contain non-static methods.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="26">
+			<ple:text>Which code segment could execute the stored procedure "countRecs()" located in a database server?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="75"><code>
+Statement stmt = connection.createStatement();
+stmt.execute("COUNTRECS()");
+			</code></ple:answer>
+				<ple:answer id="76" correct="true"><code>
+CallableStatement cs = con.prepareCall("{call COUNTRECS}");
+cs.executeQuery();
+			</code></ple:answer>
+				<ple:answer id="77"><code>
+StoreProcedureStatement spstmt = connection.createStoreProcedure("countRecs()");
+spstmt.executeQuery();
+			</code></ple:answer>
+				<ple:answer id="78"><code>
+PrepareStatement pstmt = connection.prepareStatement("countRecs()");
+pstmt.execute();
+			</code></ple:answer>
+				<ple:answer id="79"><code>
+Statement stmt = connection.createStatement();
+stmt.executeStoredProcedure("countRecs()");
+			</code></ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="27">
+			<ple:text>
+				<code>
+public void printIt(String txt) {
+	java.util.StringTokenizer st = new java.util.StringTokenizer(txt);
+	while (st.hasMoreTokens()) {
+		System.out.println(st.nextToken());
+	}
+}
+				</code>
+				
+				Referring to the above, what is the output when invoking the following statement? 
+				<code>
+printIt(" Hello\n World\t!" );
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="7A" correct="true"><code>
+Hello
+World
+!
+			</code></ple:answer>
+				<ple:answer id="7B"><code>
+HelloWorld!
+			</code></ple:answer>
+				<ple:answer id="7C"><code>
+java.util.NoSuchElementException is thrown.
+			</code></ple:answer>
+				<ple:answer id="7D"><code>
+Hello
+
+World
+!
+			</code></ple:answer>
+				<ple:answer id="7E"><code>
+Hello
+
+World!
+			</code></ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="28">
+			<ple:text>You need to store elements in a collection that guarantees that no duplicates are stored. Which one of the following interfaces provide that capability?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="7F" correct="true">Java.util.Map</ple:answer>
+				<ple:answer id="80">Java.util.List</ple:answer>
+				<ple:answer id="81">Java.util.Collection</ple:answer>
+				<ple:answer id="82">None of the above</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="29">
+			<ple:text>
+				Given the following code:
+				<code>
+class Bar { } 
+class Test 
+{  
+    Bar doBar() 
+    {
+        Bar b = new Bar(); /* Line 6 */
+        return b; /* Line 7 */
+    } 
+    public static void main (String args[]) 
+    { 
+        Test t = new Test();  /* Line 11 */
+        Bar newBar = t.doBar();  /* Line 12 */
+        System.out.println("newBar"); 
+        newBar = new Bar(); /* Line 14 */
+        System.out.println("finishing"); /* Line 15 */
+    } 
+}
+				</code>
+				At what point is the Bar object, created on line 6, eligible for garbage collection?
+
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="83">immediately after line 12</ple:answer>
+				<ple:answer id="84" correct="true">immediately after line 14</ple:answer>
+				<ple:answer id="85">immediately after line 7, when doBar() completes</ple:answer>
+				<ple:answer id="86">immediately after line 15 when main() completes</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="30">
+			<ple:text>What allows the programmer to destroy an object x?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="87">x.delete()</ple:answer>
+				<ple:answer id="88">x.finalize()</ple:answer>
+				<ple:answer id="89">Runtime.getRuntime().gc()</ple:answer>
+				<ple:answer id="8A" correct="true">Only the garbage collection system can destroy an object.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="31">
+			<ple:text>Which two of the following methods are defined in class Thread?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="8B" correct="true">start()</ple:answer>
+				<ple:answer id="8C">wait()</ple:answer>
+				<ple:answer id="8D">notify()</ple:answer>
+				<ple:answer id="8E" correct="true">run()</ple:answer>
+				<ple:answer id="8F">terminate()</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="32">
+			<ple:text>
+				What will be the output of the program?
+				
+				<code>
+class Test 
+{
+    public static void main(String [] args) 
+    {
+        Test p = new Test();
+        p.start();
+    }
+
+    void start() 
+    {
+        boolean b1 = false;
+        boolean b2 = fix(b1);
+        System.out.println(b1 + " " + b2);
+    }
+
+    boolean fix(boolean b1) 
+    {
+        b1 = true;
+        return b1;
+    }
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="90">true true</ple:answer>
+				<ple:answer id="91" correct="true">false true</ple:answer>
+				<ple:answer id="92">true false</ple:answer>
+				<ple:answer id="93">false false</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="33">
+			<ple:text>What will be the output of the program?
+				<code>	
+try 
+{ 
+    int x = 0; 
+    int y = 5 / x; 
+} 
+catch (Exception e) 
+{
+    System.out.println("Exception"); 
+} 
+catch (ArithmeticException ae) 
+{
+    System.out.println(" Arithmetic Exception"); 
+} 
+System.out.println("finished");
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="94">finished</ple:answer>
+				<ple:answer id="95">Exception</ple:answer>
+				<ple:answer id="96" correct="true">Compilation fails.</ple:answer>
+				<ple:answer id="97">Arithmetic Exception</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="34">
+			<ple:text>
+				Given the two code fragments, which two code fragments will compile?
+				<code>
+interface Base 
+{
+    boolean m1 ();
+    byte m2(short s);
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="98"><code>
+interface Base2 implements Base {}
+			</code></ple:answer>
+				<ple:answer id="99"><code>
+abstract class Class2 extends Base
+{ public boolean m1(){ return true; }}
+			</code></ple:answer>
+				<ple:answer id="9A" correct="true"><code>
+abstract class Class2 implements Base {}
+			</code></ple:answer>
+				<ple:answer id="9B" correct="true"><code>
+abstract class Class2 implements Base
+     { public boolean m1(){ return (7 > 4); }}
+		    </code></ple:answer>
+				<ple:answer id="9C"><code>
+abstract class Class2 implements Base
+     { protected boolean m1(){ return (5 > 7) }}
+     		</code></ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="35">
+			<ple:text>Which of the following are legal method declarations?</ple:text>
+
+			<ple:answers>
+				<ple:answer id="9D" correct="true">protected abstract void m1();</ple:answer>
+				<ple:answer id="9E" correct="true">static final void m1(){}</ple:answer>
+				<ple:answer id="9F" correct="true">synchronized public final void m1() {}</ple:answer>
+				<ple:answer id="A0" correct="true">private native void m1();</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="36">
+			<ple:text>Given the following class, which are correct implementations of the hashCode() method?
+				<code>
+class ValuePair {
+    public int a, b;
+    public boolean equals(Object other) {
+        try {
+            ValuePair o = (ValuePair) other;
+            return (a == o.a &amp;&amp; b == o.b)
+                || (a == o.b &amp;&amp; b == o.a);
+        } catch (ClassCastException cce) {
+            return false;
+        }
+    }
+    public int hashCode() {
+        // Provide implementation here.
+    }
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="A1" correct="true">return 0;</ple:answer>
+				<ple:answer id="A2">return a;</ple:answer>
+				<ple:answer id="A3" correct="true">return a + b;</ple:answer>
+				<ple:answer id="A4">return a - b;</ple:answer>
+				<ple:answer id="A5" correct="true">return a ^ b;</ple:answer>
+				<ple:answer id="A6">return (a 16) | b;</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="37">
+			<ple:text>What is wrong with the following code?
+				<code>
+class MyException extends Exception {}
+public class Qb4ab {
+    public void foo() {
+        try {
+            bar();
+        } finally {
+            baz();
+        } catch (MyException e) {}
+    }
+    public void bar() throws MyException {
+        throw new MyException();
+    }
+    public void baz() throws RuntimeException {
+        throw new RuntimeException();
+    }
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="A7">Since the method foo() does not catch the exception generated by the method baz()
+		it must declare the RuntimeException in a throws clause.</ple:answer>
+				<ple:answer id="A8">A try block cannot be followed by both a catch and a finally block.</ple:answer>
+				<ple:answer id="A9">An empty catch block is not allowed.</ple:answer>
+				<ple:answer id="AA" correct="true">A catch block cannot follow a finally block.</ple:answer>
+				<ple:answer id="AB">A finally block must always follow one or more catch blocks.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="38">
+			<ple:text>Which statements are true about the following code?
+				<code>
+class A {
+    public A() {}
+    public A(int i) { this(); }
+}
+class B extends A {
+    public boolean B(String msg) { return false; }
+}
+class C extends B {
+    private C() { super(); }
+    public C(String msg) { this(); }
+    public C(int i) {}
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="AC">The code will fail to compile.</ple:answer>
+				<ple:answer id="AD" correct="true">The constructor in A that takes an int as an argument will never be called
+			as a result of constructing an object of class B or C.</ple:answer>
+				<ple:answer id="AE" correct="true">Class C defines three constructors.</ple:answer>
+				<ple:answer id="AF">Objects of class B cannot be constructed.</ple:answer>
+				<ple:answer id="B0">At most one of the constructors of each class is called as a result of constructing an object of class C.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="39">
+			<ple:text>
+				Which statements can be inserted at the indicated position in the following code to make the program print 1 on the standard output when executed?
+				<code>
+public class MyClass {
+    int a = 1;
+    int b = 1;
+    int c = 1;
+    class Inner {
+        int a = 2;
+        int get() {
+            int c = 3;
+            // Insert statement here.
+            return c;
+        }
+    }
+    MyClass() {
+        Inner i = new Inner();
+        System.out.println(i.get());
+    }
+    public static void main(String[] args) {
+        new MyClass();
+    }
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="B1" correct="true">c = b;</ple:answer>
+				<ple:answer id="B2">c = this.a;</ple:answer>
+				<ple:answer id="B3">c = this.b;</ple:answer>
+				<ple:answer id="B4" correct="true">c = MyClass.this.a;</ple:answer>
+				<ple:answer id="B5">c = c;</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="40">
+			<ple:text>
+				What will be the result of executing the following program code with assertions enabled?
+				<code>
+import java.util.*;
+
+public class MyClass {
+   public static void main(String[] args) {
+       LinkedList lla = new LinkedList();
+       LinkedList llb = new LinkedList();
+       assert lla.size() == llb.size() : "empty";
+
+       lla.add("Hello");
+       assert lla.size() == 1 : "size";
+
+       llb.add("Hello");
+       assert llb.contains("Hello") : "contains";
+       assert lla.get(0).equals(llb.get(0)) : "element";
+       assert lla.equals(llb) : "collection";
+   }
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="B6" correct="true">Execution proceeds normally and produces no output.</ple:answer>
+				<ple:answer id="B7">An AssertionError with the message "size" is thrown.</ple:answer>
+				<ple:answer id="B8">An AssertionError with the message "empty" is thrown.</ple:answer>
+				<ple:answer id="B9">An AssertionError with the message "element" is thrown.</ple:answer>
+				<ple:answer id="BA">An IndexOutofBoundsException is thrown.</ple:answer>
+				<ple:answer id="BB">An AssertionError with the message "container" is thrown.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="41">
+			<ple:text>
+				What will be the result of attempting to compile and run the following code?
+					<code>
+public class Q275d {
+    static int a;
+    int b;
+
+    public Q275d() {
+        int c;
+        c = a;
+        a++;
+        b += c;
+    }
+
+    public static void main(String[] args) {
+        new Q275d();
+    }
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="BC">The code will fail to compile since the constructor is trying to access static members.</ple:answer>
+				<ple:answer id="BD">The code will fail to compile since the constructor is trying to use static field a before it has been initialized.</ple:answer>
+				<ple:answer id="BE">The code will fail to compile since the constructor is trying to use field b before it has been initialized.</ple:answer>
+				<ple:answer id="BF">The code will fail to compile since the constructor is trying to use local variable c before it has been initialized.</ple:answer>
+				<ple:answer id="C0" correct="true">The code will compile and run without any problems.</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+		<ple:question id="42">
+			<ple:text>
+				What will be written to the standard output when the following program is executed?
+				<code>
+public class MyClass {
+    public static void main(String[] args) {
+        double d = -2.9;
+        int i = (int) d;
+        i *= (int) Math.ceil(d);
+        i *= (int) Math.abs(d);
+        System.out.println(i);
+    }
+}
+				</code>
+			</ple:text>
+
+			<ple:answers>
+				<ple:answer id="C1">-12</ple:answer>
+				<ple:answer id="C2">18</ple:answer>
+				<ple:answer id="C3" correct="true">8</ple:answer>
+				<ple:answer id="C4">12</ple:answer>
+				<ple:answer id="C5">27</ple:answer>
+			</ple:answers>
+		</ple:question>
+		
+	</ple:questions>
+</ple:test>
