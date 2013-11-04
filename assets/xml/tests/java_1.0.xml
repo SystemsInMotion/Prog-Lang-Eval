@@ -187,7 +187,7 @@ class Baz extends Foo {
 public class MyClass {
 	public static void main(String[] args) {
 		RuntimeException re = null;
-	throw re;
+		throw re;
 	}
 }
 				</code>
@@ -216,10 +216,10 @@ public class MyClass {
 	public static void main( String[] args) {		
 		try{
 			f();
-		} catch (InterruptedException e)	{
+		} catch (InterruptedException e) {
 			System.out.println("IE ");
 			throw new RuntimeException();
-		} catch (RuntimeException e)	{
+		} catch (RuntimeException e) {
 			System.out.println("RE ");
 			return;
 		} catch (Exception e) {
@@ -228,7 +228,7 @@ public class MyClass {
 			System.out.println("F ");
 		}
 		
-		system.out.println("DONE");
+		System.out.println("DONE");
 	}
 }
 				</code>
@@ -382,26 +382,26 @@ void doIt()
 			<ple:text>Which code segment could execute the stored procedure "countRecs()" located in a database server?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="75"><code>
-Statement stmt = connection.createStatement();
-stmt.execute("COUNTRECS()");
-			</code></ple:answer>
-				<ple:answer id="76" correct="true"><code>
-CallableStatement cs = con.prepareCall("{call COUNTRECS}");
-cs.executeQuery();
-			</code></ple:answer>
-				<ple:answer id="77"><code>
-StoreProcedureStatement spstmt = connection.createStoreProcedure("countRecs()");
-spstmt.executeQuery();
-			</code></ple:answer>
-				<ple:answer id="78"><code>
-PrepareStatement pstmt = connection.prepareStatement("countRecs()");
-pstmt.execute();
-			</code></ple:answer>
-				<ple:answer id="79"><code>
-Statement stmt = connection.createStatement();
-stmt.executeStoredProcedure("countRecs()");
-			</code></ple:answer>
+				<ple:answer id="75">
+<code>Statement stmt = connection.createStatement();
+stmt.execute("COUNTRECS()");</code>
+				</ple:answer>
+				<ple:answer id="76" correct="true">
+<code>CallableStatement cs = con.prepareCall("{call COUNTRECS}");
+cs.executeQuery();</code>
+				</ple:answer>
+				<ple:answer id="77">
+<code>StoreProcedureStatement spstmt = connection.createStoreProcedure("countRecs()");
+spstmt.executeQuery();</code>
+				</ple:answer>
+				<ple:answer id="78">
+<code>PrepareStatement pstmt = connection.prepareStatement("countRecs()");
+pstmt.execute();</code>
+				</ple:answer>
+				<ple:answer id="79">
+<code>Statement stmt = connection.createStatement();
+stmt.executeStoredProcedure("countRecs()");</code>
+				</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -423,28 +423,34 @@ printIt(" Hello\n World\t!" );
 			</ple:text>
 
 			<ple:answers>
-				<ple:answer id="7A" correct="true"><code>
-Hello
+				<ple:answer id="7A" correct="true">
+					
+<code>Hello
 World
-!
-			</code></ple:answer>
-				<ple:answer id="7B"><code>
-HelloWorld!
-			</code></ple:answer>
-				<ple:answer id="7C"><code>
-java.util.NoSuchElementException is thrown.
-			</code></ple:answer>
-				<ple:answer id="7D"><code>
-Hello
+!</code>
+					
+				</ple:answer>
+				<ple:answer id="7B">
+					
+<code>HelloWorld!</code>
+					
+				</ple:answer>
+				<ple:answer id="7C">java.util.NoSuchElementException is thrown.</ple:answer>
+				<ple:answer id="7D">
+					
+<code>Hello
 
 World
-!
-			</code></ple:answer>
-				<ple:answer id="7E"><code>
-Hello
+!</code>
+					
+				</ple:answer>
+				<ple:answer id="7E">
+					
+<code>Hello
 
-World!
-			</code></ple:answer>
+World!</code>
+					
+				</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -556,17 +562,14 @@ class Test
 		<ple:question id="33">
 			<ple:text>What will be the output of the program?
 				<code>	
-try 
-{ 
+try { 
     int x = 0; 
     int y = 5 / x; 
 } 
-catch (Exception e) 
-{
+catch (Exception e) {
     System.out.println("Exception"); 
 } 
-catch (ArithmeticException ae) 
-{
+catch (ArithmeticException ae) {
     System.out.println(" Arithmetic Exception"); 
 } 
 System.out.println("finished");
@@ -585,8 +588,7 @@ System.out.println("finished");
 			<ple:text>
 				Given the two code fragments, which two code fragments will compile?
 				<code>
-interface Base 
-{
+interface Base {
     boolean m1 ();
     byte m2(short s);
 }
@@ -594,24 +596,35 @@ interface Base
 			</ple:text>
 
 			<ple:answers>
-				<ple:answer id="98"><code>
-interface Base2 implements Base {}
-			</code></ple:answer>
-				<ple:answer id="99"><code>
-abstract class Class2 extends Base
-{ public boolean m1(){ return true; }}
-			</code></ple:answer>
-				<ple:answer id="9A" correct="true"><code>
-abstract class Class2 implements Base {}
-			</code></ple:answer>
-				<ple:answer id="9B" correct="true"><code>
-abstract class Class2 implements Base
-     { public boolean m1(){ return (7 > 4); }}
-		    </code></ple:answer>
-				<ple:answer id="9C"><code>
-abstract class Class2 implements Base
-     { protected boolean m1(){ return (5 > 7) }}
-     		</code></ple:answer>
+				<ple:answer id="98">
+<code>interface Base2 implements Base {
+}</code>
+				</ple:answer>
+				<ple:answer id="99">
+<code>abstract class Class2 extends Base { 
+	public boolean m1() { 
+		return true; 
+	}
+}</code>
+				</ple:answer>
+				<ple:answer id="9A" correct="true">
+<code>abstract class Class2 implements Base {
+}</code>
+				</ple:answer>
+				<ple:answer id="9B" correct="true">
+<code>abstract class Class2 implements Base { 
+	public boolean m1() { 
+		return (7 > 4); 
+	}
+}</code>
+		    	</ple:answer>
+				<ple:answer id="9C">
+<code>abstract class Class2 implements Base { 
+	protected boolean m1() { 
+		return (5 > 7) 
+	}
+}</code>
+     			</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -660,7 +673,9 @@ class ValuePair {
 		<ple:question id="37">
 			<ple:text>What is wrong with the following code?
 				<code>
-class MyException extends Exception {}
+class MyException extends Exception {
+}
+
 public class Qb4ab {
     public void foo() {
         try {
@@ -669,9 +684,11 @@ public class Qb4ab {
             baz();
         } catch (MyException e) {}
     }
+    
     public void bar() throws MyException {
         throw new MyException();
     }
+    
     public void baz() throws RuntimeException {
         throw new RuntimeException();
     }
