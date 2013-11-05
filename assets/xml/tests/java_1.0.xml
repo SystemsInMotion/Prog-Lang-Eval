@@ -361,6 +361,7 @@ stmt.executeStoredProcedure("countRecs()");</code>
 				<ple:answer id="7F" correct="true"><snippet>java.util.Map</snippet></ple:answer>
 				<ple:answer id="80"><snippet>java.util.List</snippet></ple:answer>
 				<ple:answer id="81"><snippet>java.util.Collection</snippet></ple:answer>
+				<ple:answer id="81"><snippet>java.util.Comparable</snippet></ple:answer>
 				<ple:answer id="82">None of the above</ple:answer>
 			</ple:answers>
 		</ple:question>
