@@ -18,7 +18,7 @@
 	
 	<ple:questions>
 		<ple:question id="1">
-			<ple:text>When comparing two String variables, what will the '==' operator do?</ple:text>
+			<ple:text>When comparing two String variables, what will the <snippet>==</snippet> operator do?</ple:text>
 
 			<ple:answers>
 				<ple:answer id="01">Compare the strings case-sensitive and return true if they are the same sequence of characters.</ple:answer>
@@ -37,9 +37,9 @@ System.out.println("value: " + i++);
 			</ple:text>
 
 			<ple:answers>
-				<ple:answer id="04" correct="true"> value: 0</ple:answer>
-				<ple:answer id="05">value: 1</ple:answer>
-				<ple:answer id="06">value: 2</ple:answer>
+				<ple:answer id="04" correct="true"><snippet>value: 0</snippet></ple:answer>
+				<ple:answer id="05"><snippet>value: 1</snippet></ple:answer>
+				<ple:answer id="06"><snippet>value: 2</snippet></ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -48,14 +48,14 @@ System.out.println("value: " + i++);
 
 			<ple:answers>
 				<ple:answer id="07">String strNew;</ple:answer>
-				<ple:answer id="08" correct="true">String strNew = "hello";</ple:answer>
-				<ple:answer id="09" correct="true">String strNew = new String("hey");</ple:answer>
-				<ple:answer id="0A" correct="true">String strNew = new String();</ple:answer>
+				<ple:answer id="08" correct="true"><snippet>String strNew = "hello";</snippet></ple:answer>
+				<ple:answer id="09" correct="true"><snippet>String strNew = new String("hey");</snippet></ple:answer>
+				<ple:answer id="0A" correct="true"><snippet>String strNew = new String();</snippet></ple:answer>
 			</ple:answers>
 		</ple:question>
 		
 		<ple:question id="4">
-			<ple:text>Given a method: protected void foo(), which classes will have access to it?</ple:text>
+			<ple:text>Given a method <snippet>protected void foo()</snippet>, which classes will have access to it?</ple:text>
 
 			<ple:answers>
 				<ple:answer id="0B">Any class in the project.</ple:answer>
@@ -95,8 +95,8 @@ System.out.println("value: " + i++);
 
 			<ple:answers>
 				<ple:answer id="1A">An object is deleted as soon as there are no more references that denote the object.</ple:answer>
-				<ple:answer id="1B">The finalize() method will eventually be called on every object.</ple:answer>
-				<ple:answer id="1C" correct="true">The finalize() method will never be called more than once on an object.</ple:answer>
+				<ple:answer id="1B">The <snippet>finalize()</snippet> method will eventually be called on every object.</ple:answer>
+				<ple:answer id="1C" correct="true">The <snippet>finalize()</snippet> method will never be called more than once on an object.</ple:answer>
 				<ple:answer id="1D" correct="true">An object will not be garbage collected as long as it is possible for a thread to access it through a reference.</ple:answer>
 			</ple:answers>
 		</ple:question>
@@ -159,11 +159,11 @@ class Baz extends Foo {
 			<ple:text>Which statement is true?</ple:text>
 
 			<ple:answers>
+				<ple:answer id="2E" correct="true">All objects have a <snippet>finalize()</snippet> method.</ple:answer>
 				<ple:answer id="2D">If an exception is thrown during the execution of the finalize() method of an eligible object then the exception is ignored and the object is destroyed</ple:answer>
-				<ple:answer id="2E" correct="true">All objects have a finalize() method.</ple:answer>
-				<ple:answer id="2F">Objects can be destroyed by explicitly calling the finalize() method.</ple:answer>
-				<ple:answer id="30">The finalize() method can be declared with any accessibility.</ple:answer>
-				<ple:answer id="31">The compiler will fail to compile code that defines an overriding finalize() method</ple:answer>
+				<ple:answer id="2F">Objects can be destroyed by explicitly calling the <snippet>finalize()</snippet> method.</ple:answer>
+				<ple:answer id="30">The <snippet>finalize()</snippet> method can be declared with any accessibility.</ple:answer>
+				<ple:answer id="31">The compiler will fail to compile code that defines an overriding <snippet>finalize()</snippet> method</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -194,10 +194,10 @@ public class MyClass {
 		  	</ple:text>
 
 			<ple:answers>
-				<ple:answer id="37">The code will fail to compile, because main() does not declare that it throws a RuntimeException</ple:answer>
+				<ple:answer id="37">The code will fail to compile because <snippet>main()</snippet> does not declare that it throws a <snippet>RuntimeException</snippet></ple:answer>
 				<ple:answer id="38">The program will fail to compile, since it cannot throw re.</ple:answer>
-				<ple:answer id="39">The program will compile without error and will throw a RunTimeException when run.</ple:answer>
-				<ple:answer id="3A" correct="true">The program will compile without error and will throw a NullPointerException when run.</ple:answer>
+				<ple:answer id="39">The program will compile without error and will throw a <snippet>RuntimeException</snippet> when run.</ple:answer>
+				<ple:answer id="3A" correct="true">The program will compile without error and will throw a <snippet>NullPointerException</snippet> when run.</ple:answer>
 				<ple:answer id="3B">THe program will compile without error and will run and terminate without any output.</ple:answer>
 			</ple:answers>
 		</ple:question>
@@ -301,10 +301,10 @@ void doIt()
 			</ple:text>
 
 			<ple:answers>
-				<ple:answer id="55">doIt()</ple:answer>
-				<ple:answer id="56">super.doIt()</ple:answer>
-				<ple:answer id="57">super.super.doIt()</ple:answer>
-				<ple:answer id="58">this.super.doIt()</ple:answer>
+				<ple:answer id="55"><snippet>doIt()</snippet></ple:answer>
+				<ple:answer id="56"><snippet>super.doIt()</snippet></ple:answer>
+				<ple:answer id="57"><snippet>super.super.doIt()</snippet></ple:answer>
+				<ple:answer id="58"><snippet>this.super.doIt()</snippet></ple:answer>
 				<ple:answer id="59" correct="true">It is not possible.</ple:answer>
 			</ple:answers>
 		</ple:question>
@@ -337,7 +337,6 @@ void doIt()
 			<ple:text>When creating a class that associates a set of keys with a set of values, which of these interfaces is most applicable?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="64">Collection</ple:answer>
 				<ple:answer id="65">Set</ple:answer>
 				<ple:answer id="66">SortedSet</ple:answer>
 				<ple:answer id="67" correct="true">Map</ple:answer>
@@ -458,9 +457,9 @@ World!</code>
 			<ple:text>You need to store elements in a collection that guarantees that no duplicates are stored. Which one of the following interfaces provide that capability?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="7F" correct="true">Java.util.Map</ple:answer>
-				<ple:answer id="80">Java.util.List</ple:answer>
-				<ple:answer id="81">Java.util.Collection</ple:answer>
+				<ple:answer id="7F" correct="true"><snippet>java.util.Map</snippet></ple:answer>
+				<ple:answer id="80"><snippet>java.util.List</snippet></ple:answer>
+				<ple:answer id="81"><snippet>java.util.Collection</snippet></ple:answer>
 				<ple:answer id="82">None of the above</ple:answer>
 			</ple:answers>
 		</ple:question>
@@ -503,9 +502,9 @@ class Test
 			<ple:text>What allows the programmer to destroy an object x?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="87">x.delete()</ple:answer>
-				<ple:answer id="88">x.finalize()</ple:answer>
-				<ple:answer id="89">Runtime.getRuntime().gc()</ple:answer>
+				<ple:answer id="87"><snippet>x.delete()</snippet></ple:answer>
+				<ple:answer id="88"><snippet>x.finalize()</snippet></ple:answer>
+				<ple:answer id="89"><snippet>Runtime.getRuntime().gc()</snippet></ple:answer>
 				<ple:answer id="8A" correct="true">Only the garbage collection system can destroy an object.</ple:answer>
 			</ple:answers>
 		</ple:question>
@@ -552,10 +551,10 @@ class Test
 			</ple:text>
 
 			<ple:answers>
-				<ple:answer id="90">true true</ple:answer>
-				<ple:answer id="91" correct="true">false true</ple:answer>
-				<ple:answer id="92">true false</ple:answer>
-				<ple:answer id="93">false false</ple:answer>
+				<ple:answer id="90"><snippet>true true</snippet></ple:answer>
+				<ple:answer id="91" correct="true"><snippet>false true</snippet></ple:answer>
+				<ple:answer id="92"><snippet>true false</snippet></ple:answer>
+				<ple:answer id="93"><snippet>false false</snippet></ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -662,11 +661,11 @@ class ValuePair {
 
 			<ple:answers>
 				<ple:answer id="A1" correct="true">return 0;</ple:answer>
-				<ple:answer id="A2">return a;</ple:answer>
-				<ple:answer id="A3" correct="true">return a + b;</ple:answer>
-				<ple:answer id="A4">return a - b;</ple:answer>
-				<ple:answer id="A5" correct="true">return a ^ b;</ple:answer>
 				<ple:answer id="A6">return (a 16) | b;</ple:answer>
+				<ple:answer id="A2"><snippet>return a;</snippet></ple:answer>
+				<ple:answer id="A3" correct="true"><snippet>return a + b;</snippet></ple:answer>
+				<ple:answer id="A4"><snippet>return a - b;</snippet></ple:answer>
+				<ple:answer id="A5" correct="true"><snippet>return a ^ b;</snippet></ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -762,11 +761,11 @@ public class MyClass {
 			</ple:text>
 
 			<ple:answers>
-				<ple:answer id="B1" correct="true">c = b;</ple:answer>
-				<ple:answer id="B2">c = this.a;</ple:answer>
-				<ple:answer id="B3">c = this.b;</ple:answer>
+				<ple:answer id="B1" correct="true"><snippet>c = b;</snippet></ple:answer>
+				<ple:answer id="B2"><snippet>c = this.a;</snippet></ple:answer>
+				<ple:answer id="B3"><snippet>c = this.b;</snippet></ple:answer>
+				<ple:answer id="B5"><snippet>c = c;</snippet></ple:answer>
 				<ple:answer id="B4" correct="true">c = MyClass.this.a;</ple:answer>
-				<ple:answer id="B5">c = c;</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -852,11 +851,11 @@ public class MyClass {
 			</ple:text>
 
 			<ple:answers>
-				<ple:answer id="C1">-12</ple:answer>
-				<ple:answer id="C2">18</ple:answer>
-				<ple:answer id="C3" correct="true">8</ple:answer>
-				<ple:answer id="C4">12</ple:answer>
-				<ple:answer id="C5">27</ple:answer>
+				<ple:answer id="C1"><snippet>-12</snippet></ple:answer>
+				<ple:answer id="C2"><snippet>18 </snippet></ple:answer>
+				<ple:answer id="C3" correct="true"><snippet>8  </snippet></ple:answer>
+				<ple:answer id="C4"><snippet>12 </snippet></ple:answer>
+				<ple:answer id="C5"><snippet>27 </snippet></ple:answer>
 			</ple:answers>
 		</ple:question>
 		
