@@ -113,14 +113,14 @@ System.out.println("value: " + i++);
 		</ple:question>
 		
 		<ple:question id="9" level="4">
-			<ple:text>Which statements are true?</ple:text>
+			<ple:text>Which statements are true about nested classes?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="23" correct="true">No other static members, except final static fields, can be declared within a non-static member class.</ple:answer>
+				<ple:answer id="23" correct="true">No static members (except final static fields) can be declared within a non-static member class.</ple:answer>
 				<ple:answer id="24">If a non-static member class is nested within a class named Outer, then methods within the non-static member class must use the prefix Outer.this</ple:answer>
-				<ple:answer id="25">All fields in any nested class must be declared final.</ple:answer>
+				<ple:answer id="25">All fields in a nested class must be declared final.</ple:answer>
 				<ple:answer id="26" correct="true">Anonymous classes cannot have constructors.</ple:answer>
-				<ple:answer id="27">If objRef is an instance of any nested class within the class Outer, then the expression (objRef instanceOf Outer) will evaluate to true.</ple:answer>
+				<ple:answer id="27">An instance of nested class can be considered an <snippet>instanceof</snippet> the outer class</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
