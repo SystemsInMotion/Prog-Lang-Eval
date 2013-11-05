@@ -472,17 +472,18 @@ interface Base {
 				<code>
 class ValuePair {
     public int a, b;
-    public boolean equals(Object other) {
-        try {
-            ValuePair o = (ValuePair) other;
-            return (a == o.a &amp;&amp; b == o.b)
-                || (a == o.b &amp;&amp; b == o.a);
-        } catch (ClassCastException cce) {
-            return false;
-        }
+    
+    public boolean equals(Object obj) {
+    	if (!obj instanceof ValuePair) {
+    		return false;
+    	}
+
+        return (this.a == that.a &amp;&amp; this.b == that.b)
+            || (this.a == that.b &amp;&amp; this.b == that.a);
+
     }
     public int hashCode() {
-        // Provide implementation here.
+        <strong>// Provide implementation here.</strong>
     }
 }
 				</code>
