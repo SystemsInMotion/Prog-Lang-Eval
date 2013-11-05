@@ -72,8 +72,7 @@ System.out.println("value: " + i++);
 			<ple:answers>
 				<ple:answer id="10">The value of a variable of type int is undetermined.</ple:answer>
 				<ple:answer id="11" correct="true">The value of a variable of any numeric type is zero.</ple:answer>
-				<ple:answer id="12">The compiler may issue an error if the variable is used in a method before it is initialized.</ple:answer>
-				<ple:answer id="13">A variable of type String will denote the empty String("")</ple:answer>
+				<ple:answer id="13">A variable of type String will denote the empty String ("")</ple:answer>
 				<ple:answer id="14" correct="true">The value of all variables which are references is null.</ple:answer>
 			</ple:answers>
 		</ple:question>
