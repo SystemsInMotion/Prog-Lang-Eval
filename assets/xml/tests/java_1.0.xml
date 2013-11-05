@@ -101,7 +101,7 @@ System.out.println("value: " + i++);
 		</ple:question>
 		
 		<ple:question id="8" level="4">
-			<ple:text>Which statement is true?</ple:text>
+			<ple:text>Which statement is true about static classes?</ple:text>
 
 			<ple:answers>
 				<ple:answer id="1E">Top-level classes can be declared static.</ple:answer>
