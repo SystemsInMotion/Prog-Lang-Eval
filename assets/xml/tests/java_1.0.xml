@@ -687,8 +687,10 @@ public class MyClass {
     public static void main(String[] args) {
         double d = -2.9;
         int i = (int) d;
+        
         i *= (int) Math.ceil(d);
         i *= (int) Math.abs(d);
+        
         System.out.println(i);
     }
 }
