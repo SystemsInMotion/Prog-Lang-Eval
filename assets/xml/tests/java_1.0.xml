@@ -416,8 +416,9 @@ class Test {
 				Given the two code fragments, which two code fragments will compile?
 				<code>
 interface Base {
-    boolean m1 ();
-    byte m2(short s);
+    boolean methodOne();
+    
+    byte methodTwo(short value);
 }
 				</code>
 			</ple:text>
@@ -429,7 +430,7 @@ interface Base {
 				</ple:answer>
 				<ple:answer id="99">
 <code>abstract class Class2 extends Base { 
-	public boolean m1() { 
+	public boolean methodOne() { 
 		return true; 
 	}
 }</code>
@@ -440,14 +441,14 @@ interface Base {
 				</ple:answer>
 				<ple:answer id="9B" correct="true">
 <code>abstract class Class2 implements Base { 
-	public boolean m1() { 
+	public boolean methodOne() { 
 		return (7 > 4); 
 	}
 }</code>
 		    	</ple:answer>
 				<ple:answer id="9C">
 <code>abstract class Class2 implements Base { 
-	protected boolean m1() { 
+	protected boolean methodOne() { 
 		return (5 > 7) 
 	}
 }</code>
@@ -459,10 +460,10 @@ interface Base {
 			<ple:text>Which of the following are legal method declarations?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="9D" correct="true">protected abstract void m1();</ple:answer>
-				<ple:answer id="9E" correct="true">static final void m1(){}</ple:answer>
-				<ple:answer id="9F" correct="true">synchronized public final void m1() {}</ple:answer>
-				<ple:answer id="A0" correct="true">private native void m1();</ple:answer>
+				<ple:answer id="9D" correct="true"><snippet>protected abstract void methodName();</snippet></ple:answer>
+				<ple:answer id="9E" correct="true"><snippet>static final void methodName() {}</snippet></ple:answer>
+				<ple:answer id="9F" correct="true"><snippet>synchronized public final void methodName() {}</snippet></ple:answer>
+				<ple:answer id="A0"><snippet>private abstract void methodName();</snippet></ple:answer>
 			</ple:answers>
 		</ple:question>
 		
