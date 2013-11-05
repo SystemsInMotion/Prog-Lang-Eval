@@ -47,7 +47,7 @@ System.out.println("value: " + i++);
 			<ple:text>Which are valid ways to create a new string Object?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="07">String strNew;</ple:answer>
+				<ple:answer id="07"><snippet>String strNew = 'hello';</snippet></ple:answer>
 				<ple:answer id="08" correct="true"><snippet>String strNew = "hello";</snippet></ple:answer>
 				<ple:answer id="09" correct="true"><snippet>String strNew = new String("hey");</snippet></ple:answer>
 				<ple:answer id="0A" correct="true"><snippet>String strNew = new String();</snippet></ple:answer>
