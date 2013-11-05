@@ -155,11 +155,10 @@ class Baz extends Foo {
 		</ple:question>
 		
 		<ple:question id="11" level="6">
-			<ple:text>Which statement is true?</ple:text>
+			<ple:text>Which statement is true about the <snippet>finalize()</snippet> method?</ple:text>
 
 			<ple:answers>
 				<ple:answer id="2E" correct="true">All objects have a <snippet>finalize()</snippet> method.</ple:answer>
-				<ple:answer id="2D">If an exception is thrown during the execution of the finalize() method of an eligible object then the exception is ignored and the object is destroyed</ple:answer>
 				<ple:answer id="2F">Objects can be destroyed by explicitly calling the <snippet>finalize()</snippet> method.</ple:answer>
 				<ple:answer id="30">The <snippet>finalize()</snippet> method can be declared with any accessibility.</ple:answer>
 				<ple:answer id="31">The compiler will fail to compile code that defines an overriding <snippet>finalize()</snippet> method</ple:answer>
