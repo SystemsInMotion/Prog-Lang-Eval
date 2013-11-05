@@ -611,7 +611,6 @@ public class MyClass {
 				<ple:answer id="B2"><snippet>c = this.a;</snippet></ple:answer>
 				<ple:answer id="B3"><snippet>c = this.b;</snippet></ple:answer>
 				<ple:answer id="B5"><snippet>c = c;</snippet></ple:answer>
-				<ple:answer id="B4" correct="true">c = MyClass.this.a;</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
