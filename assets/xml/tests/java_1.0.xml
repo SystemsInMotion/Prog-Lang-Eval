@@ -650,9 +650,9 @@ public class MyClass {
 		
 		<ple:question id="41" level="4">
 			<ple:text>
-				What will be the result of attempting to compile and run the following code?
+				Why could this code fail to compile?
 					<code>
-public class Q275d {
+public class ClassName {
     static int a;
     int b;
 
@@ -664,18 +664,18 @@ public class Q275d {
     }
 
     public static void main(String[] args) {
-        new Q275d();
+        new ClassName();
     }
 }
 				</code>
 			</ple:text>
 
 			<ple:answers>
-				<ple:answer id="BC">The code will fail to compile since the constructor is trying to access static members.</ple:answer>
-				<ple:answer id="BD">The code will fail to compile since the constructor is trying to use static field a before it has been initialized.</ple:answer>
-				<ple:answer id="BE">The code will fail to compile since the constructor is trying to use field b before it has been initialized.</ple:answer>
-				<ple:answer id="BF">The code will fail to compile since the constructor is trying to use local variable c before it has been initialized.</ple:answer>
-				<ple:answer id="C0" correct="true">The code will compile and run without any problems.</ple:answer>
+				<ple:answer id="BC">The constructor is trying to access static members.</ple:answer>
+				<ple:answer id="BD">The constructor is trying to use static field a before it has been initialized.</ple:answer>
+				<ple:answer id="BE">The constructor is trying to use field b before it has been initialized.</ple:answer>
+				<ple:answer id="BF">The constructor is trying to use local variable c before it has been initialized.</ple:answer>
+				<ple:answer id="C0" correct="true">The code will compile and run successfully.</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
