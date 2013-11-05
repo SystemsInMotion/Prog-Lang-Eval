@@ -243,18 +243,6 @@ public class MyClass {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="15">
-			<ple:text>Which statement is true?</ple:text>
-
-			<ple:answers>
-				<ple:answer id="41">The compiler will fail to compile code that explicitly tries to call the finalize() method.</ple:answer>
-				<ple:answer id="42">The finalize() method must be declared with protected accessibility.</ple:answer>
-				<ple:answer id="43">An overriding finalize() method in any classs can always throw checked exceptions.</ple:answer>
-				<ple:answer id="44" correct="true">The finalize() method can be overloaded.</ple:answer>
-				<ple:answer id="45">The body of the finalize() method can only access other objects that are eligible for garbage collection.</ple:answer>
-			</ple:answers>
-		</ple:question>
-		
 		<ple:question id="16">
 			<ple:text>Which statements are true about locks?</ple:text>
 
@@ -276,18 +264,6 @@ public class MyClass {
 				<ple:answer id="4D">The thread is waiting to acquire the lock of an object in order to execute a certain method on that object.</ple:answer>
 				<ple:answer id="4E">The thread does not have the highest priority and is currently not executing.</ple:answer>
 				<ple:answer id="4F">The thread is sleeping as a result of a call to the sleep() method.</ple:answer>
-			</ple:answers>
-		</ple:question>
-		
-		<ple:question id="18">
-			<ple:text>Which statements are true?</ple:text>
-
-			<ple:answers>
-				<ple:answer id="50">Inheritance defines a <i>has-a</i> relationship between a superclass and its subclasses.</ple:answer>
-				<ple:answer id="51" correct="true">Every Java object has a public method named equals.</ple:answer>
-				<ple:answer id="52">Every Java object has a public method named length.</ple:answer>
-				<ple:answer id="53">A class can extend any number of other classes.</ple:answer>
-				<ple:answer id="54" correct="true">A non-final class can be extended by any number of classes.</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -321,18 +297,6 @@ void doIt()
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="21">
-			<ple:text>Which method from the String or StringBuffer classes modifies the object on which it is invoked?</ple:text>
-
-			<ple:answers>
-				<ple:answer id="5F">The charAt() method of the String class</ple:answer>
-				<ple:answer id="60">The toUpperCase() method of the String class</ple:answer>
-				<ple:answer id="61">The replace() method of the String class.</ple:answer>
-				<ple:answer id="62" correct="true">The reverse() method of the StringBuffer class.</ple:answer>
-				<ple:answer id="63">The length() method of the StringBuffer class.</ple:answer>
-			</ple:answers>
-		</ple:question>
-		
 		<ple:question id="22">
 			<ple:text>When creating a class that associates a set of keys with a set of values, which of these interfaces is most applicable?</ple:text>
 
@@ -354,28 +318,6 @@ void doIt()
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="24">
-			<ple:text>Which statements are true about the collection interfaces?</ple:text>
-
-			<ple:answers>
-				<ple:answer id="6C" correct="true">Set extends Collection.</ple:answer>
-				<ple:answer id="6D" correct="true">All methods defined in Set are also defined in Collection.</ple:answer>
-				<ple:answer id="6E" correct="true">List extends Collection.</ple:answer>
-				<ple:answer id="6F">All methods defined in List are also defined in Collection.</ple:answer>
-			</ple:answers>
-		</ple:question>
-		
-		<ple:question id="25">
-			<ple:text>Which statement is true?</ple:text>
-
-			<ple:answers>
-				<ple:answer id="70">Non-static member classes must have either default or public accessibility.</ple:answer>
-				<ple:answer id="71">All nested classes can declare static member classes.</ple:answer>
-				<ple:answer id="72" correct="true">Methods in all nested classes can be declared static.</ple:answer>
-				<ple:answer id="73">All nested classes can be declared static.</ple:answer>
-				<ple:answer id="74">Static member classes can contain non-static methods.</ple:answer>
-			</ple:answers>
-		</ple:question>
 		
 		<ple:question id="26">
 			<ple:text>Which code segment could execute the stored procedure "countRecs()" located in a database server?</ple:text>
@@ -404,55 +346,6 @@ stmt.executeStoredProcedure("countRecs()");</code>
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="27">
-			<ple:text>
-				<code>
-public void printIt(String txt) {
-	java.util.StringTokenizer st = new java.util.StringTokenizer(txt);
-	while (st.hasMoreTokens()) {
-		System.out.println(st.nextToken());
-	}
-}
-				</code>
-				
-				Referring to the above, what is the output when invoking the following statement? 
-				<code>
-printIt(" Hello\n World\t!" );
-				</code>
-			</ple:text>
-
-			<ple:answers>
-				<ple:answer id="7A" correct="true">
-					
-<code>Hello
-World
-!</code>
-					
-				</ple:answer>
-				<ple:answer id="7B">
-					
-<code>HelloWorld!</code>
-					
-				</ple:answer>
-				<ple:answer id="7C">java.util.NoSuchElementException is thrown.</ple:answer>
-				<ple:answer id="7D">
-					
-<code>Hello
-
-World
-!</code>
-					
-				</ple:answer>
-				<ple:answer id="7E">
-					
-<code>Hello
-
-World!</code>
-					
-				</ple:answer>
-			</ple:answers>
-		</ple:question>
-		
 		<ple:question id="28">
 			<ple:text>You need to store elements in a collection that guarantees that no duplicates are stored. Which one of the following interfaces provide that capability?</ple:text>
 
@@ -463,41 +356,7 @@ World!</code>
 				<ple:answer id="82">None of the above</ple:answer>
 			</ple:answers>
 		</ple:question>
-		
-		<ple:question id="29">
-			<ple:text>
-				Given the following code:
-				<code>
-class Bar { } 
-class Test 
-{  
-    Bar doBar() 
-    {
-        Bar b = new Bar(); /* Line 6 */
-        return b; /* Line 7 */
-    } 
-    public static void main (String args[]) 
-    { 
-        Test t = new Test();  /* Line 11 */
-        Bar newBar = t.doBar();  /* Line 12 */
-        System.out.println("newBar"); 
-        newBar = new Bar(); /* Line 14 */
-        System.out.println("finishing"); /* Line 15 */
-    } 
-}
-				</code>
-				At what point is the Bar object, created on line 6, eligible for garbage collection?
 
-			</ple:text>
-
-			<ple:answers>
-				<ple:answer id="83">immediately after line 12</ple:answer>
-				<ple:answer id="84" correct="true">immediately after line 14</ple:answer>
-				<ple:answer id="85">immediately after line 7, when doBar() completes</ple:answer>
-				<ple:answer id="86">immediately after line 15 when main() completes</ple:answer>
-			</ple:answers>
-		</ple:question>
-		
 		<ple:question id="30">
 			<ple:text>What allows the programmer to destroy an object x?</ple:text>
 
@@ -506,18 +365,6 @@ class Test
 				<ple:answer id="88"><snippet>x.finalize()</snippet></ple:answer>
 				<ple:answer id="89"><snippet>Runtime.getRuntime().gc()</snippet></ple:answer>
 				<ple:answer id="8A" correct="true">Only the garbage collection system can destroy an object.</ple:answer>
-			</ple:answers>
-		</ple:question>
-		
-		<ple:question id="31">
-			<ple:text>Which two of the following methods are defined in class Thread?</ple:text>
-
-			<ple:answers>
-				<ple:answer id="8B" correct="true">start()</ple:answer>
-				<ple:answer id="8C">wait()</ple:answer>
-				<ple:answer id="8D">notify()</ple:answer>
-				<ple:answer id="8E" correct="true">run()</ple:answer>
-				<ple:answer id="8F">terminate()</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -557,32 +404,7 @@ class Test
 				<ple:answer id="93"><snippet>false false</snippet></ple:answer>
 			</ple:answers>
 		</ple:question>
-		
-		<ple:question id="33">
-			<ple:text>What will be the output of the program?
-				<code>	
-try { 
-    int x = 0; 
-    int y = 5 / x; 
-} 
-catch (Exception e) {
-    System.out.println("Exception"); 
-} 
-catch (ArithmeticException ae) {
-    System.out.println(" Arithmetic Exception"); 
-} 
-System.out.println("finished");
-				</code>
-			</ple:text>
 
-			<ple:answers>
-				<ple:answer id="94">finished</ple:answer>
-				<ple:answer id="95">Exception</ple:answer>
-				<ple:answer id="96" correct="true">Compilation fails.</ple:answer>
-				<ple:answer id="97">Arithmetic Exception</ple:answer>
-			</ple:answers>
-		</ple:question>
-		
 		<ple:question id="34">
 			<ple:text>
 				Given the two code fragments, which two code fragments will compile?
