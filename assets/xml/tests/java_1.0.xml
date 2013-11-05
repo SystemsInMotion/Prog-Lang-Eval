@@ -17,7 +17,7 @@
 	</ple:intro>
 	
 	<ple:questions>
-		<ple:question id="1">
+		<ple:question id="1" level="2">
 			<ple:text>When comparing two String variables, what will the <snippet>==</snippet> operator do?</ple:text>
 
 			<ple:answers>
@@ -27,7 +27,7 @@
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="2">
+		<ple:question id="2" level="1">
 			<ple:text>
 				What is the output of this code segment?
 				<code> 
@@ -43,7 +43,7 @@ System.out.println("value: " + i++);
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="3">
+		<ple:question id="3" level="3">
 			<ple:text>Which are valid ways to create a new string Object?</ple:text>
 
 			<ple:answers>
@@ -54,7 +54,7 @@ System.out.println("value: " + i++);
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="4">
+		<ple:question id="4" level="3">
 			<ple:text>Given a method <snippet>protected void foo()</snippet>, which classes will have access to it?</ple:text>
 
 			<ple:answers>
@@ -66,7 +66,7 @@ System.out.println("value: " + i++);
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="5">
+		<ple:question id="5" level="2">
 			<ple:text>Which statements are true about the value of a variable, when no explicit assignments have been made?</ple:text>
 
 			<ple:answers>
@@ -78,7 +78,7 @@ System.out.println("value: " + i++);
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="6">
+		<ple:question id="6" level="2">
 			<ple:text>In Java's object model, a class can have multiple ______ but only a single direct ______</ple:text>
 
 			<ple:answers>
@@ -90,7 +90,7 @@ System.out.println("value: " + i++);
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="7">
+		<ple:question id="7" level="4">
 			<ple:text>Which statements describe guaranteed behavior of the garbage collection and finalization mechanisms?</ple:text>
 
 			<ple:answers>
@@ -101,7 +101,7 @@ System.out.println("value: " + i++);
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="8">
+		<ple:question id="8" level="4">
 			<ple:text>Which statement is true?</ple:text>
 
 			<ple:answers>
@@ -113,7 +113,7 @@ System.out.println("value: " + i++);
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="9">
+		<ple:question id="9" level="4">
 			<ple:text>Which statements are true?</ple:text>
 
 			<ple:answers>
@@ -125,7 +125,7 @@ System.out.println("value: " + i++);
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="10">
+		<ple:question id="10" level="3">
 			<ple:text>
 				Which statements are true about the relationships between the following classes?
 		
@@ -155,7 +155,7 @@ class Baz extends Foo {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="11">
+		<ple:question id="11" level="6">
 			<ple:text>Which statement is true?</ple:text>
 
 			<ple:answers>
@@ -167,7 +167,7 @@ class Baz extends Foo {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="12">
+		<ple:question id="12" level="4">
 			<ple:text>Which statements are true?</ple:text>
 
 			<ple:answers>
@@ -179,7 +179,7 @@ class Baz extends Foo {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="13">
+		<ple:question id="13" level="4">
 			<ple:text>
 				What will be the result of attempting to compile and run the following program?
 		
@@ -202,7 +202,7 @@ public class MyClass {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="14">
+		<ple:question id="14" level="3">
 			<ple:text>
 				What will the output of this program be?
 				<code>
@@ -243,7 +243,7 @@ public class MyClass {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="16">
+		<ple:question id="16" level="5">
 			<ple:text>Which statements are true about locks?</ple:text>
 
 			<ple:answers>
@@ -255,7 +255,7 @@ public class MyClass {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="17">
+		<ple:question id="17" level="4">
 			<ple:text>Which of these are NOT plausible reasons why a thread might be alive, but still not be running.</ple:text>
 
 			<ple:answers>
@@ -267,7 +267,7 @@ public class MyClass {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="19">
+		<ple:question id="19" level="3">
 			<ple:text>
 				Given classes A, B, and C. B extends A. C extends B. All classes implement the instance method 
 				<code>
@@ -285,7 +285,7 @@ void doIt()
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="20">
+		<ple:question id="20" level="3">
 			<ple:text>Which statement is true?</ple:text>
 
 			<ple:answers>
@@ -297,7 +297,7 @@ void doIt()
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="22">
+		<ple:question id="22" level="1">
 			<ple:text>When creating a class that associates a set of keys with a set of values, which of these interfaces is most applicable?</ple:text>
 
 			<ple:answers>
@@ -307,7 +307,7 @@ void doIt()
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="23">
+		<ple:question id="23" level="3">
 			<ple:text>Given two collection objects referenced by col1 and col2, which statements are true?</ple:text>
 
 			<ple:answers>
@@ -319,7 +319,7 @@ void doIt()
 		</ple:question>
 		
 		
-		<ple:question id="26">
+		<ple:question id="26" level="5">
 			<ple:text>Which code segment could execute the stored procedure "countRecs()" located in a database server?</ple:text>
 
 			<ple:answers>
@@ -346,7 +346,7 @@ stmt.executeStoredProcedure("countRecs()");</code>
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="28">
+		<ple:question id="28" level="3">
 			<ple:text>You need to store elements in a collection that guarantees that no duplicates are stored. Which one of the following interfaces provide that capability?</ple:text>
 
 			<ple:answers>
@@ -357,7 +357,7 @@ stmt.executeStoredProcedure("countRecs()");</code>
 			</ple:answers>
 		</ple:question>
 
-		<ple:question id="30">
+		<ple:question id="30" level="4">
 			<ple:text>What allows the programmer to destroy an object x?</ple:text>
 
 			<ple:answers>
@@ -368,7 +368,7 @@ stmt.executeStoredProcedure("countRecs()");</code>
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="32">
+		<ple:question id="32" level="2">
 			<ple:text>
 				What will be the output of the program?
 				
@@ -405,7 +405,7 @@ class Test
 			</ple:answers>
 		</ple:question>
 
-		<ple:question id="34">
+		<ple:question id="34" level="2">
 			<ple:text>
 				Given the two code fragments, which two code fragments will compile?
 				<code>
@@ -449,7 +449,7 @@ interface Base {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="35">
+		<ple:question id="35" level="2">
 			<ple:text>Which of the following are legal method declarations?</ple:text>
 
 			<ple:answers>
@@ -460,7 +460,7 @@ interface Base {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="36">
+		<ple:question id="36" level="3">
 			<ple:text>Given the following class, which are correct implementations of the hashCode() method?
 				<code>
 class ValuePair {
@@ -491,7 +491,7 @@ class ValuePair {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="37">
+		<ple:question id="37" level="3">
 			<ple:text>What is wrong with the following code?
 				<code>
 class MyException extends Exception {
@@ -527,7 +527,7 @@ public class Qb4ab {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="38">
+		<ple:question id="38" level="3">
 			<ple:text>Which statements are true about the following code?
 				<code>
 class A {
@@ -555,7 +555,7 @@ class C extends B {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="39">
+		<ple:question id="39" level="3">
 			<ple:text>
 				Which statements can be inserted at the indicated position in the following code to make the program print 1 on the standard output when executed?
 				<code>
@@ -591,7 +591,7 @@ public class MyClass {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="40">
+		<ple:question id="40" level="6">
 			<ple:text>
 				What will be the result of executing the following program code with assertions enabled?
 				<code>
@@ -625,7 +625,7 @@ public class MyClass {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="41">
+		<ple:question id="41" level="4">
 			<ple:text>
 				What will be the result of attempting to compile and run the following code?
 					<code>
@@ -656,7 +656,7 @@ public class Q275d {
 			</ple:answers>
 		</ple:question>
 		
-		<ple:question id="42">
+		<ple:question id="42" level="3">
 			<ple:text>
 				What will be written to the standard output when the following program is executed?
 				<code>

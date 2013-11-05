@@ -30,6 +30,7 @@
     		</element>
     	</sequence>
     	<attribute name="id" type="string" use="required"></attribute>
+    	<attribute name="level" type="int" use="required"></attribute>
     </complexType>
 
     <complexType name="answers">
