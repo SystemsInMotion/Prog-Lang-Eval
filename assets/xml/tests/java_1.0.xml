@@ -571,7 +571,6 @@ class Three extends Two {
 			by creating an object of class <snippet>Two</snippet> or <snippet>Three</snippet>.</ple:answer>
 				<ple:answer id="AF">Objects of class <snippet>Two</snippet> cannot be created.</ple:answer>
 				<ple:answer id="B0">No more than one constructor of each class would be called by creating an object of class <snippet>Three</snippet>.</ple:answer>
-				<ple:answer id="AE" correct="true">Class C defines three constructors.</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
