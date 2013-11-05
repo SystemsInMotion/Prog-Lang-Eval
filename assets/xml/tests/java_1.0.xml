@@ -85,7 +85,7 @@ System.out.println("value: " + i++);
 				<ple:answer id="16">Children, parent</ple:answer>
 				<ple:answer id="17" correct="true">Interfaces, parent</ple:answer>
 				<ple:answer id="18">Parents, interface</ple:answer>
-				<ple:answer id="19">None of the above.</ple:answer>
+				<ple:answer id="19">None of these.</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -362,7 +362,7 @@ stmt.executeStoredProcedure("countRecs()");</code>
 				<ple:answer id="80"><snippet>java.util.List</snippet></ple:answer>
 				<ple:answer id="81"><snippet>java.util.Collection</snippet></ple:answer>
 				<ple:answer id="81"><snippet>java.util.Comparable</snippet></ple:answer>
-				<ple:answer id="82">None of the above</ple:answer>
+				<ple:answer id="82">None of these</ple:answer>
 			</ple:answers>
 		</ple:question>
 
