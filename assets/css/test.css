@@ -1,8 +1,121 @@
+code, 
+snippet {
+	font-family: monospace;
+	white-space: pre;
+	background-color: #F4F4F4;
+	color: #070;
+}
+
+snippet {
+	display: inline;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+	font-weight: bold;
+}
 
 code {
-	white-space: pre;
+	display: block;
+	padding-left: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border: thin dashed gray;
 }
 
-.answers {
-	list-style-type: upper-alpha;
+.answer code {
+	margin-top: 0;
+	padding-right: 1em;
 }
+
+code strong, 
+snippet strong {
+	color: black;
+}
+
+#questions .answers {
+	list-style-type: upper-alpha;
+	border-bottom: thin solid gray;
+	padding-bottom: 1em;
+}
+
+#questions .answer {
+	margin: 0.25em;
+}
+
+#questions .answers.declined {
+	color: darkgray;
+}
+
+#questions .question {
+	margin: 1em;
+	border: thin gray solid;
+	padding: 1em;
+	page-break-inside:avoid;
+}
+
+#questions .decline {
+	margin-top: 1em;
+	font-style: italic;
+}
+
+#questions .question .text {
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+	border-bottom: thin gray solid;
+}
+
+#questions .question .instruction {
+	font-style: italic;
+}
+
+#key .correct {
+	color: darkgreen;
+}
+
+#key .incorrect {
+	color: darkred;
+}
+
+#key .score {
+	font-weight: bold;
+	font-size: +1.2em;
+	text-align: center;
+}
+
+#key .answers {
+	text-align: right;
+	margin-right: 2em;
+}
+
+#key .question_type {
+	text-align: center;
+}
+
+#key tr {
+	border-bottom: thin black solid;
+}
+
+.review {
+	color: red;
+}
+
+.question .review {
+	font-style: italic;
+	text-align: right;
+	position: relative;
+	float: right;
+	top: -1em;
+	left: 0.8em;
+}
+
+.answer section {
+	display: inline-table;
+}
+
+@media print {
+	body {
+		zoom: 85%;
+	}
+}
+
