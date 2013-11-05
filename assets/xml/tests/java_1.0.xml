@@ -499,12 +499,12 @@ class ValuePair {
 		</ple:question>
 		
 		<ple:question id="37" level="3">
-			<ple:text>What is wrong with the following code?
+			<ple:text>What in the following code would cause an error?
 				<code>
 class MyException extends Exception {
 }
 
-public class Qb4ab {
+public class ClassName {
     public void foo() {
         try {
             bar();
