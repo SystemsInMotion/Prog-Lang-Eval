@@ -576,29 +576,34 @@ class Three extends Two {
 		
 		<ple:question id="39" level="3">
 			<ple:text>
-				Which statements can be inserted at the indicated position in the following code to make the program print 1 on the standard output when executed?
+				Given the following code:
 				<code>
 public class MyClass {
     int a = 1;
     int b = 1;
     int c = 1;
+    
     class Inner {
         int a = 2;
+        
         int get() {
             int c = 3;
-            // Insert statement here.
+            <strong>// Insert statement here.</strong>
             return c;
         }
     }
+    
     MyClass() {
         Inner i = new Inner();
         System.out.println(i.get());
     }
+    
     public static void main(String[] args) {
         new MyClass();
     }
 }
 				</code>
+				Which statements can be inserted at the indicated position to make the program print <snippet>1</snippet> when executed?
 			</ple:text>
 
 			<ple:answers>
