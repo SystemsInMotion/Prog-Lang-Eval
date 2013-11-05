@@ -179,12 +179,11 @@ class Baz extends Foo {
 		<ple:question id="13" level="4">
 			<ple:text>
 				What will be the result of attempting to compile and run the following program?
-		
 				<code>
 public class MyClass {
 	public static void main(String[] args) {
-		RuntimeException re = null;
-		throw re;
+		RuntimeException exception = null;
+		throw exception;
 	}
 }
 				</code>
@@ -192,7 +191,7 @@ public class MyClass {
 
 			<ple:answers>
 				<ple:answer id="37">The code will fail to compile because <snippet>main()</snippet> does not declare that it throws a <snippet>RuntimeException</snippet></ple:answer>
-				<ple:answer id="38">The program will fail to compile, since it cannot throw re.</ple:answer>
+				<ple:answer id="38">The program will fail to compile, since it cannot throw <snippet>exception</snippet>.</ple:answer>
 				<ple:answer id="39">The program will compile without error and will throw a <snippet>RuntimeException</snippet> when run.</ple:answer>
 				<ple:answer id="3A" correct="true">The program will compile without error and will throw a <snippet>NullPointerException</snippet> when run.</ple:answer>
 				<ple:answer id="3B">THe program will compile without error and will run and terminate without any output.</ple:answer>
@@ -203,74 +202,87 @@ public class MyClass {
 			<ple:text>
 				What will the output of this program be?
 				<code>
+public class InterruptedException extends Exception {
+}		
+		
 public class MyClass {
  
- 	//Assume InterruptedException is a direct subclass of Exception.
-	static void f() throws InterruptedException {
+	static void function() throws InterruptedException {
 		throw new InterruptedException("All your base.");
 	}
 	
-	public static void main( String[] args) {		
+	public static void main(String[] args) {		
 		try{
-			f();
+			function();
 		} catch (InterruptedException e) {
-			System.out.println("IE ");
+			System.out.print("IntExpt ");
 			throw new RuntimeException();
 		} catch (RuntimeException e) {
-			System.out.println("RE ");
+			System.out.print("RuntimeExpt ");
 			return;
 		} catch (Exception e) {
-			System.out.println("E ");
+			System.out.print("Expt ");
 		} finally {
-			System.out.println("F ");
+			System.out.print("Finally ");
 		}
 		
-		System.out.println("DONE");
+		System.out.print("DONE");
 	}
 }
 				</code>
 			</ple:text>
 
 			<ple:answers>
-				<ple:answer id="3C">DONE</ple:answer>
-				<ple:answer id="3D" correct="true">IE F</ple:answer>
-				<ple:answer id="3E">IE RE E</ple:answer>
-				<ple:answer id="3F">IE F DONE</ple:answer>
-				<ple:answer id="40">IE RE F DONE</ple:answer>
+				<ple:answer id="3C"><snippet>DONE</snippet></ple:answer>
+				<ple:answer id="3D" correct="true"><snippet>IntExpt Finally</snippet></ple:answer>
+				<ple:answer id="3E"><snippet>IntExpt RuntimeExpt Expt</snippet></ple:answer>
+				<ple:answer id="3F"><snippet>IntExpt Finally DONE</snippet></ple:answer>
+				<ple:answer id="40"><snippet>IntExpt RuntimeExpt Finally DONE</snippet></ple:answer>
 			</ple:answers>
 		</ple:question>
 		
 		<ple:question id="16" level="5">
-			<ple:text>Which statements are true about locks?</ple:text>
+			<ple:text>Which statements are true about thread locks?</ple:text>
 
 			<ple:answers>
 				<ple:answer id="46" correct="true">A thread can hold more than one lock at a time.</ple:answer>
 				<ple:answer id="47">Invoking wait() on a Thread object will relinquish all locks held by the thread.</ple:answer>
-				<ple:answer id="48">Invoking wait() on an object whose lock is held by the current thread will relinquish the lock.</ple:answer>
-				<ple:answer id="49">Invoking notify on an object whose lock is held by the current thread will relinquish the lock.</ple:answer>
 				<ple:answer id="4A" correct="true">Multiple threads can hold the same lock at the same time.</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
 		<ple:question id="17" level="4">
-			<ple:text>Which of these are NOT plausible reasons why a thread might be alive, but still not be running.</ple:text>
+			<ple:text>Which of these are reasons why a thread might be alive but not running?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="4B">The thread is waiting for some condition as a result of a wait() call.</ple:answer>
-				<ple:answer id="4C" correct="true">The execution has reached the end of the run() method.</ple:answer>
-				<ple:answer id="4D">The thread is waiting to acquire the lock of an object in order to execute a certain method on that object.</ple:answer>
-				<ple:answer id="4E">The thread does not have the highest priority and is currently not executing.</ple:answer>
-				<ple:answer id="4F">The thread is sleeping as a result of a call to the sleep() method.</ple:answer>
+				<ple:answer id="4B" correct="true">The thread is waiting for some condition as a result of a wait() call.</ple:answer>
+				<ple:answer id="4C">The execution has reached the end of the run() method.</ple:answer>
+				<ple:answer id="4E" correct="true">The thread does not have the highest priority and is currently not executing.</ple:answer>
+				<ple:answer id="4F" correct="true">The thread is sleeping as a result of a call to the sleep() method.</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
 		<ple:question id="19" level="3">
 			<ple:text>
-				Given classes A, B, and C. B extends A. C extends B. All classes implement the instance method 
+				Given the following class structure:
 				<code>
-void doIt()
-				</code>
-				How can the doIt() method in A be called from an instance method in C?
+class One {
+	void doIt() {
+	}
+}
+
+class Two extends One {
+	void doIt() {
+	}
+}
+
+class Three extends Two {
+	void doIt() {
+	}
+}
+				
+				</code>				
+				How can the <snippet>doIt()</snippet> method in class One be called from class Three?
 			</ple:text>
 
 			<ple:answers>
@@ -283,14 +295,12 @@ void doIt()
 		</ple:question>
 		
 		<ple:question id="20" level="3">
-			<ple:text>Which statement is true?</ple:text>
+			<ple:text>Which statement is true about constructors?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="5A">A super() or this() call must always be provided explicitly as the first statement in the body of a constructor</ple:answer>
-				<ple:answer id="5B" correct="true">If both a subclass and its superclass do not have any declared constructors, the implicit default constructor of the subclass will call super() when run.</ple:answer>
-				<ple:answer id="5C">If neither super() nor this() is declared as the first statement in the body of a constructor, then this() will implicitly be inserted as the first statement.</ple:answer>
-				<ple:answer id="5D">If super() is the first statement in the body of a constructor, then this() can be declared as the second statement.</ple:answer>
-				<ple:answer id="5E">Calling super() as the first statement in the body of a constructor of a subclass will always work, since all superclasses have a default constructor.</ple:answer>
+				<ple:answer id="5B" correct="true">If neither a subclass nor its superclass have any declared constructors, the implicit default constructor of the subclass will call <snippet>super()</snippet> when run.</ple:answer>
+				<ple:answer id="5C">If neither <snippet>super()</snippet> nor <snippet>this()</snippet> is declared as the first statement in the body of a constructor, then <snippet>this()</snippet> will implicitly be inserted as the first statement.</ple:answer>
+				<ple:answer id="5D">If <snippet>super()</snippet> is the first statement in the body of a constructor, then <snippet>this()</snippet> can be declared as the second statement.</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
@@ -298,23 +308,24 @@ void doIt()
 			<ple:text>When creating a class that associates a set of keys with a set of values, which of these interfaces is most applicable?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="65">Set</ple:answer>
-				<ple:answer id="66">SortedSet</ple:answer>
-				<ple:answer id="67" correct="true">Map</ple:answer>
+				<ple:answer id="65"><snippet>java.util.Set</snippet></ple:answer>
+				<ple:answer id="65"><snippet>java.util.List</snippet></ple:answer>
+				<ple:answer id="67" correct="true"><snippet>java.util.Map</snippet></ple:answer>
+				<ple:answer id="67"><snippet>java.util.Iterable</snippet></ple:answer>
+				<ple:answer id="67">None of these</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
 		<ple:question id="23" level="3">
-			<ple:text>Given two collection objects referenced by col1 and col2, which statements are true?</ple:text>
+			<ple:text>Given two collection objects <snippet>collectOne</snippet> and <snippet>collectTwo</snippet>, which statements are true?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="68">The operation col1.retainAll( Col2) will not modify the col1 object.</ple:answer>
-				<ple:answer id="69" correct="true">The operation col1.removeAll( col2) will not modify the col2 object.</ple:answer>
-				<ple:answer id="6A">The operation col1.addAll( col2) will return a new collection object, containing elements from both col1 and col2.</ple:answer>
-				<ple:answer id="6B">The operation col1.ContainsAll(Col2) will modify the col1 object.</ple:answer>
+				<ple:answer id="68"><snippet>collectOne.retainAll(collectTwo)</snippet> will NOT modify <snippet>collectOne.</snippet></ple:answer>
+				<ple:answer id="69" correct="true"><snippet>collectOne.removeAll(collectTwo)</snippet> will NOT modify <snippet>collectTwo.</snippet></ple:answer>
+				<ple:answer id="6A"><snippet>collectOne.addAll(collectTwo)</snippet> will return a new collection containing elements from both <snippet>collectOne</snippet> and <snippet>collectTwo.</snippet></ple:answer>
+				<ple:answer id="6B"><snippet>collectOne.containsAll(collectTwo)</snippet> WILL modify <snippet>collectOne</snippet>.</ple:answer>
 			</ple:answers>
 		</ple:question>
-		
 		
 		<ple:question id="26" level="5">
 			<ple:text>Which code segment could execute the stored procedure "countRecs()" located in a database server?</ple:text>
