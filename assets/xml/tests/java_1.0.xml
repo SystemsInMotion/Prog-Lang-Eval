@@ -535,28 +535,43 @@ public class ClassName {
 		<ple:question id="38" level="3">
 			<ple:text>Which statements are true about the following code?
 				<code>
-class A {
-    public A() {}
-    public A(int i) { this(); }
+class One {
+    public One() {
+    }
+    
+    public One(int i) { 
+    	this(); 
+    }
 }
-class B extends A {
-    public boolean B(String msg) { return false; }
+
+class Two extends One {
+    public boolean Two(String msg) { 
+    	return false; 
+    }
 }
-class C extends B {
-    private C() { super(); }
-    public C(String msg) { this(); }
-    public C(int i) {}
+
+class Three extends Two {
+    private Three() { 
+    	super(); 
+    }
+    
+    public Three(String msg) { 
+    	this(); 
+    }
+    
+    public Three(int i) {
+    }
 }
 				</code>
 			</ple:text>
 
 			<ple:answers>
 				<ple:answer id="AC">The code will fail to compile.</ple:answer>
-				<ple:answer id="AD" correct="true">The constructor in A that takes an int as an argument will never be called
-			as a result of constructing an object of class B or C.</ple:answer>
+				<ple:answer id="AD" correct="true">The constructor in class <snippet>One</snippet> that takes an int will never be called
+			by creating an object of class <snippet>Two</snippet> or <snippet>Three</snippet>.</ple:answer>
+				<ple:answer id="AF">Objects of class <snippet>Two</snippet> cannot be created.</ple:answer>
+				<ple:answer id="B0">No more than one constructor of each class would be called by creating an object of class <snippet>Three</snippet>.</ple:answer>
 				<ple:answer id="AE" correct="true">Class C defines three constructors.</ple:answer>
-				<ple:answer id="AF">Objects of class B cannot be constructed.</ple:answer>
-				<ple:answer id="B0">At most one of the constructors of each class is called as a result of constructing an object of class C.</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
