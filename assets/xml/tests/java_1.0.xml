@@ -622,17 +622,17 @@ import java.util.*;
 
 public class MyClass {
    public static void main(String[] args) {
-       LinkedList lla = new LinkedList();
-       LinkedList llb = new LinkedList();
-       assert lla.size() == llb.size() : "empty";
+       LinkedList listOne = new LinkedList();
+       LinkedList listTwo = new LinkedList();
+       assert listOne.size() == listTwo.size() : "empty";
 
        lla.add("Hello");
-       assert lla.size() == 1 : "size";
+       assert listOne.size() == 1 : "size";
 
        llb.add("Hello");
-       assert llb.contains("Hello") : "contains";
-       assert lla.get(0).equals(llb.get(0)) : "element";
-       assert lla.equals(llb) : "collection";
+       assert listTwo.contains("Hello") : "contains";
+       assert listOne.get(0).equals(listTwo.get(0)) : "element";
+       assert listOne.equals(listTwo) : "collection";
    }
 }
 				</code>
