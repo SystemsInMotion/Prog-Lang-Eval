@@ -442,14 +442,14 @@ interface Base {
 				<ple:answer id="9B" correct="true">
 <code>abstract class Class2 implements Base { 
 	public boolean methodOne() { 
-		return (7 > 4); 
+		return (4 > 7); 
 	}
 }</code>
 		    	</ple:answer>
 				<ple:answer id="9C">
 <code>abstract class Class2 implements Base { 
 	protected boolean methodOne() { 
-		return (5 > 7) 
+		return (4 - 7); 
 	}
 }</code>
      			</ple:answer>
