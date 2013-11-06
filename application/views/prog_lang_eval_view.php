@@ -84,43 +84,43 @@
 	    	<li class="question">
 	    		<?php if ($review): ?>
 	    			<div class="review">
-	    				Original Question #: <?=$question['number']?><br>
-	    				Question Difficulty Level: <?=$question['level']?>
+	    				Original Question #: <?=$question->getId()?><br>
+	    				Question Difficulty Level: <?=$question->getLevel()?>
 	    			</div>
 	    		<?php endif ?>
 	    		
 	    		<div class="text">
-	    			<?=$question['text']?>
+	    			<?=$question->getText()?>
 	    		</div>
 	    			    		
 	    		<ol class="answers">
 	    		
 	    			<span class="instruction">
-	    				<?= ($question['multiplicity'] > 1)?
+	    				<?= ($question->hasMultipleAnswers())?
 	    					"Select all correct answers." :
 	    					"Select one answer."
 	    				?>
 	    			</span>
 	    			
-	    			<?php foreach ($question['answers'] as $answer): ?>
+	    			<?php foreach ($question->getAnswers($shuffle) as $answer): ?>
 	    				<li class="answer">
 	    				
 	    					<section class="input">
 		    					<input 
-			    					id="<?=$answer['id']?>"
-			 		    			<?= ($question['multiplicity'] > 1)?
-					    				'type="checkbox" name="' .$answer['id']. '"' :
-					    				'type="radio" name="' .$question['id']. '"'
+			    					id="<?=$answer->getId()?>"
+			 		    			<?= $question->hasMultipleAnswers()?
+					    				'type="checkbox" name="' .$answer->getId(). '"' :
+					    				'type="radio" name="' .$question->getId(). '"'
 					    			?> 
-					    			value="<?=$answer['id']?>"
-					    			<?php if ($review && $answer['correct']): ?>
+					    			value="<?=$answer->getId()?>"
+					    			<?php if ($review && $answer->isCorrect()): ?>
 					    				checked="checked"
 					    			<?php endif ?>
 					    		>
 					    	</section>
 			    			
 			    			<section class="label">
-	    						<label for="<?=$answer['id']?>"><?=$answer['text']?></label>
+	    						<label for="<?=$answer->getId()?>"><?=$answer->getText()?></label>
 	    					</section>
 	    					
 	    					<div style="clear:both"></div>
@@ -129,8 +129,8 @@
 	    		</ol>
 	    		
 	    		<div class="decline">
-	    			<input type="checkbox" id="<?=$answer['id']?>_decline" name="<?=$answer['id']?>" value="decline">
-	    			<label for="<?=$answer['id']?>_decline">Decline to answer this question</label>
+	    			<input type="checkbox" id="<?=$answer->getId()?>_decline" name="<?=$answer->getId()?>" value="decline">
+	    			<label for="<?=$answer->getId()?>_decline">Decline to answer this question</label>
 	    		</div>
 	    	</li>
 		<?php endforeach ?>
