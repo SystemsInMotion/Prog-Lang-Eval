@@ -9,7 +9,7 @@ class Test_question extends CI_Model {
 	
 	private $answers;
 	
-	private $number_of_correct;
+	private $expected;
 	
 	function __construct() {
 		parent::__construct();
@@ -17,7 +17,7 @@ class Test_question extends CI_Model {
         $this->text = "";
         $this->answers = array();
         
-        $this->number_of_correct = 0;
+        $this->expected = 0;
     }
     
     public function setId($id) {
@@ -45,10 +45,11 @@ class Test_question extends CI_Model {
     }
     
     public function addAnswer(Test_answer $answer) {
-    	array_push($this->answers, $answer);
+    	$this->answers[$answer->getId()] = $answer;
+    	$answer->setQuestion($this);
     	
     	if ($answer->isCorrect()) {
-    		$this->number_of_correct++;
+    		$this->expected++;
     	}
     }
     
@@ -63,8 +64,22 @@ class Test_question extends CI_Model {
     	}
     }
     
+    public function getAnswerById($id) {
+    	if (array_key_exists($id, $this->answers)) {
+    		return $this->answers[$id];
+    	}
+    	else {
+    		log_message('error', 'Given aID not found: ('.$this->id.')'.$id);
+    		return null;
+    	}
+    }
+    
     public function hasMultipleAnswers() {
     	return $this->number_of_correct > 1;
+    }
+    
+    public function getExpected() {
+    	return $this->expected;
     }
 	
 }

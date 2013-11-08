@@ -40,7 +40,7 @@ class Test_data extends CI_Model {
     }
     
     public function addQuestion(Test_question $question) {
-    	array_push($this->questions, $question);
+    	$this->questions[$question->getId()] = $question;
     }
     
     public function getQuestions($shuffle) {
@@ -52,6 +52,35 @@ class Test_data extends CI_Model {
     	else {
     		return $this->questions;
     	}
+    }
+    
+    public function getQuestionById($id) {
+    	if (array_key_exists($id, $this->questions)) {
+    		return $this->questions[$id];
+    	}
+    	else {
+    		log_message('error', 'Given qID not found: '.$id);
+    		show_error('Given qID not found: '.$id);
+    		return null;
+    	}
+    }
+    
+    public function getAnswerById($id) {
+    	$qid = $this->getQIDFromAID($id);
+    	
+    	$question = $this->getQuestionById($qid);
+    	$answer = $question->getAnswerById($id);
+    	
+    	return $answer;
+    }
+    
+    public function totalQuestions() {
+    	return count($this->questions);
+    }
+    
+    public static function getQIDFromAID($aid) {
+		$ids = explode("_", $aid);
+		return $ids[0];
     }
 
 }
