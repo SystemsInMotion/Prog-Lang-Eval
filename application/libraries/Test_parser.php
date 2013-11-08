@@ -1,9 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-//require "../models/test/test_data.php";
-//require "../models/test/test_question.php";
-//require "../models/test/test_answer.php";
-
 class Test_parser {
 	
 	private static $namespace_prefix = 'ple';
@@ -21,13 +17,15 @@ class Test_parser {
 		$this->CI->load->model('test/Test_data');
 		$test = $this->CI->Test_data;
 		
-		$test->setIntro($ple->intro);
+		$test->setIntro((string)$ple->intro);
 		$test->setId($ple->attributes()->id);
 		$test->setType($ple->attributes()->type);
   		
   		foreach ($ple->questions->question as $question_data) {
   			$question = $this->_parseQuestion($question_data);  
+  			
 			$test->addQuestion($question);
+			
   		}
 		
 		return $test;
