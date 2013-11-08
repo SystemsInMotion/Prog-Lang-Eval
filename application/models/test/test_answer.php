@@ -7,6 +7,7 @@ class Test_answer extends CI_Model {
 	private $text;
 	
 	private $correct;
+	private $given;
 	
 	private $question;
 	
@@ -14,6 +15,8 @@ class Test_answer extends CI_Model {
 		parent::__construct();
         $this->text = "";
         $this->correct = false;
+        
+        $this->given = false;
     }
     
     public function setId($id) {
@@ -37,7 +40,15 @@ class Test_answer extends CI_Model {
     }
 	
 	public function isCorrect() {
-		return $this->correct === true;
+		return $this->correct;
+	}
+	
+	public function setGiven() {
+		$this->given = true;
+    }
+	
+	public function wasGiven() {
+		return $this->given;
 	}
 	
 	public function setQuestion(Test_question $question) {

@@ -9,7 +9,13 @@ class Test_question extends CI_Model {
 	
 	private $answers;
 	
-	private $expected;
+	private $expected_correct;
+	private $correct;
+	private $incorrect;
+	
+	private $declined;
+	
+	private $score;
 	
 	function __construct() {
 		parent::__construct();
@@ -17,7 +23,11 @@ class Test_question extends CI_Model {
         $this->text = "";
         $this->answers = array();
         
-        $this->expected = 0;
+        $this->expected_correct = 0;
+        $this->correct = 0;
+        $this->incorrect = 0;
+        
+        $this->declined = false;
     }
     
     public function setId($id) {
@@ -49,7 +59,7 @@ class Test_question extends CI_Model {
     	$answer->setQuestion($this);
     	
     	if ($answer->isCorrect()) {
-    		$this->expected++;
+    		$this->expected_correct++;
     	}
     }
     
@@ -75,13 +85,48 @@ class Test_question extends CI_Model {
     }
     
     public function hasMultipleAnswers() {
-    	return $this->number_of_correct > 1;
+    	return $this->expected_correct > 1;
     }
     
-    public function getExpected() {
-    	return $this->expected;
+    public function getExpectedCorrect() {
+    	return $this->expected_correct;
+    }
+    
+    public function getCorrect() {
+    	return $this->correct;
+    }
+    
+    public function getIncorrect() {
+    	return $this->incorrect;
+    }
+    
+    public function setDeclined($declined) {
+    	$this->declined = $declined === true;
+    }
+    
+    public function isDeclined() {
+    	return $this->declined;
+    }
+    
+    public function addGivenAnswer($aid) {
+    	$answer = $this->getAnswerById($aid);
+    	$answer->setGiven();
+
+    	if ($answer->isCorrect()) {
+    		$this->correct++;
+    	}
+    	else {
+    		$this->incorrect++;
+    	}
     }
 	
+	public function setScore($score) {
+		$this->score = $score;
+	}
+	
+	public function getScore() {
+		return $this->score;
+	}
 }
 
 /* End of file Test_Question.php */
