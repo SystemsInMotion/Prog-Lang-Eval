@@ -2,22 +2,9 @@
 
 class Test_scorer {
 	
-	private $CI;
-	
 	const INCORRECT_PENALTY = -0.5;
 	const ALL_CORRECT_SCORE = 1;
 	const PARTIAL_CORRECT_SCORE = 0.5;
-
-	
-	public function __construct() {
-		
-		$this->questions_answered = array();
-		$this->questions_declined = array();
-		
-		$this->answers_by_level = array();
-		
-		$this->CI =& get_instance();
-	}
 	
 	private static function _calculateScore($correct, $incorrect, $expected) {
 		if ($incorrect > 0) {
@@ -26,7 +13,7 @@ class Test_scorer {
 		else if ($correct === $expected){
 			return self::ALL_CORRECT_SCORE;
 		}
-		else {
+		else if ($correct > 1){
 			return self::PARTIAL_CORRECT_SCORE;
 		}
 	}
@@ -37,75 +24,28 @@ class Test_scorer {
 			$qid = $test->getQIDFromAID($id);
 			
 			if ($given === "decline") {
-				array_push($this->questions_declined, $qid);
+				$test->addDeclined($qid);
 			}
 			else {
-				$answer = $test->getAnswerById($given);
-			
-				if ($answer == null) {
-					show_error('Given answer not found: ('.$id.')'.$given);
-				}
-				else {
-					array_push($this->questions_answered, $qid);
-					$this->_recordAnswer($answer);
-				}
+				$test->addAnswered($given);
 			}
 		}
 		
-		$this->_scoreAnswers();
-		
-		return $this;
-		
+		$this->_scoreAnswers($test);		
 	}
 	
-	private function _scoreAnswers() {
-		foreach ($this->answers_by_level as $level => &$answers) {
-			foreach ($answers as $qid => &$answer_score) {
-				$score = self::_calculateScore(
-					$answer_score['correct'],
-					$answer_score['incorrect'],
-					$answer_score['expected']
-				);
-				
-				
-				$answer_score['score'] = $score;
-				$this->final_score += $score;
-			}
-		}
-	}
-	
-	private function _recordAnswer(Test_answer $answer) {
-
-		$question = $answer->getQuestion();
-		
-		$score =& $this->_getQuestionScore($question);		
-		
-		if ($answer->isCorrect()) {
-			$score['correct'] += 1;
-		}
-		else {
-			$score['incorrect'] += 1;
-		}
-	}
-	
-	private function &_getQuestionScore(Test_question $question) {
-		$level =& $this->_getLevelScore($question->getLevel());
-		
-		$qid = $question->getId();
-		
-		if (! array_key_exists($qid, $level)) {
-			$level[$qid] = array(
-				'correct' => 0,
-				'incorrect' => 0,
-				'expected' => $question->getNumberOfCorrect()
+	private function _scoreAnswers(Test_data &$test) {
+		foreach ($test->getQuestions() as $qid => $question) {
+			$score = self::_calculateScore(
+				$question->getCorrect(),
+				$question->getIncorrect(),
+				$question->getExpectedCorrect()
 			);
+			
+			$question->setScore($score);
+			$test->addScore($score);
 		}
-		
-		return $level[$qid];
 	}
-	
-
-
 }
 
 /* End of file test_score.php */
