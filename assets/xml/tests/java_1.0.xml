@@ -308,11 +308,11 @@ class Three extends Two {
 			<ple:text>When creating a class that associates a set of keys with a set of values, which of these interfaces is most applicable?</ple:text>
 
 			<ple:answers>
-				<ple:answer id="65"><snippet>java.util.Set</snippet></ple:answer>
-				<ple:answer id="65"><snippet>java.util.List</snippet></ple:answer>
-				<ple:answer id="67" correct="true"><snippet>java.util.Map</snippet></ple:answer>
-				<ple:answer id="67"><snippet>java.util.Iterable</snippet></ple:answer>
-				<ple:answer id="67">None of these</ple:answer>
+				<ple:answer id="65A"><snippet>java.util.Set</snippet></ple:answer>
+				<ple:answer id="65B"><snippet>java.util.List</snippet></ple:answer>
+				<ple:answer id="67A" correct="true"><snippet>java.util.Map</snippet></ple:answer>
+				<ple:answer id="67B"><snippet>java.util.Iterable</snippet></ple:answer>
+				<ple:answer id="67C">None of these</ple:answer>
 			</ple:answers>
 		</ple:question>
 		
