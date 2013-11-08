@@ -61,7 +61,8 @@ class Test_parser {
 		$answer = new Test_answer();
 			
 		$answer->setId($question_id . '_a' . $answer_data->attributes()->id);
-		$answer->setCorrect((string)$answer_data->attributes()->correct);
+		$correct = (string)$answer_data->attributes()->correct;
+		$answer->setCorrect($correct === "true");
   				
   		$answer->setText($this->_innerHTML($answer_data));
 

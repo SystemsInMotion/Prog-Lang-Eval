@@ -33,7 +33,7 @@ class Test_answer extends CI_Model {
     }
     
     public function setCorrect($correct) {
-		$this->correct = ($correct === true || $correct === "true");
+		$this->correct = $correct === true;
     }
 	
 	public function isCorrect() {
