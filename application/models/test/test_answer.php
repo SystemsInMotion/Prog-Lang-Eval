@@ -8,6 +8,8 @@ class Test_answer extends CI_Model {
 	
 	private $correct;
 	
+	private $question;
+	
 	function __construct() {
 		parent::__construct();
         $this->text = "";
@@ -36,6 +38,14 @@ class Test_answer extends CI_Model {
 	
 	public function isCorrect() {
 		return $this->correct === true;
+	}
+	
+	public function setQuestion(Test_question $question) {
+		$this->question = $question;
+	}
+	
+	public function getQuestion() {
+		return $this->question;
 	}
 
 }
