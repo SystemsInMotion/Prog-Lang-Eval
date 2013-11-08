@@ -357,6 +357,8 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+$config['global_xss_filtering'] = TRUE;
+
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */
