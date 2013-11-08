@@ -78,64 +78,70 @@
 	
 	</div>
 	
-	<ol id="questions">
+	<form id="exam" action="submit" method="post">
 	
-		<?php foreach ($questions as $question): ?>
-	    	<li class="question">
-	    		<?php if ($review): ?>
-	    			<div class="review">
-	    				Original Question #: <?=$question->getId()?><br>
-	    				Question Difficulty Level: <?=$question->getLevel()?>
-	    			</div>
-	    		<?php endif ?>
-	    		
-	    		<div class="text">
-	    			<?=$question->getText()?>
-	    		</div>
-	    			    		
-	    		<ol class="answers">
-	    		
-	    			<span class="instruction">
-	    				<?= ($question->hasMultipleAnswers())?
-	    					"Select all correct answers." :
-	    					"Select one answer."
-	    				?>
-	    			</span>
-	    			
-	    			<?php foreach ($question->getAnswers($shuffle) as $answer): ?>
-	    				<li class="answer">
-	    				
-	    					<section class="input">
-		    					<input 
-			    					id="<?=$answer->getId()?>"
-			 		    			<?= $question->hasMultipleAnswers()?
-					    				'type="checkbox" name="' .$answer->getId(). '"' :
-					    				'type="radio" name="' .$question->getId(). '"'
-					    			?> 
-					    			value="<?=$answer->getId()?>"
-					    			<?php if ($review && $answer->isCorrect()): ?>
-					    				checked="checked"
-					    			<?php endif ?>
-					    		>
-					    	</section>
-			    			
-			    			<section class="label">
-	    						<label for="<?=$answer->getId()?>"><?=$answer->getText()?></label>
-	    					</section>
-	    					
-	    					<div style="clear:both"></div>
-	    				</li>
-	    			<?php endforeach ?>
-	    		</ol>
-	    		
-	    		<div class="decline">
-	    			<input type="checkbox" id="<?=$answer->getId()?>_decline" name="<?=$answer->getId()?>" value="decline">
-	    			<label for="<?=$answer->getId()?>_decline">Decline to answer this question</label>
-	    		</div>
-	    	</li>
-		<?php endforeach ?>
+		<ol id="questions">
 		
-	</ol>
+			<?php foreach ($questions as $qid => $question): ?>
+		    	<li class="question">
+		    		<?php if ($review): ?>
+		    			<div class="review">
+		    				Original Question #: <?=$qid?><br>
+		    				Question Difficulty Level: <?=$question->getLevel()?>
+		    			</div>
+		    		<?php endif ?>
+		    		
+		    		<div class="text">
+		    			<?=$question->getText()?>
+		    		</div>
+		    			    		
+		    		<ol class="answers">
+		    		
+		    			<span class="instruction">
+		    				<?= ($question->hasMultipleAnswers())?
+		    					"Select all correct answers." :
+		    					"Select one answer."
+		    				?>
+		    			</span>
+		    			
+		    			<?php foreach ($question->getAnswers($shuffle) as $aid => $answer): ?>
+		    				<li class="answer">
+		    				
+		    					<section class="input">
+			    					<input 
+				    					id="<?=$answer->getId()?>"
+				 		    			<?= $question->hasMultipleAnswers()?
+						    				'type="checkbox" name="' .$aid. '"' :
+						    				'type="radio" name="' .$qid. '"'
+						    			?> 
+						    			value="<?=$aid?>"
+						    			<?php if ($review && $answer->isCorrect()): ?>
+						    				checked="checked"
+						    			<?php endif ?>
+						    		>
+						    	</section>
+				    			
+				    			<section class="label">
+		    						<label for="<?=$aid?>"><?=$answer->getText()?></label>
+		    					</section>
+		    					
+		    					<div style="clear:both"></div>
+		    				</li>
+		    			<?php endforeach ?>
+		    		</ol>
+		    		
+		    		<div class="decline">
+		    			<input type="checkbox" id="<?=$qid?>_decline" name="<?=$qid?>" value="decline">
+		    			<label for="<?=$qid?>_decline">Decline to answer this question</label>
+		    		</div>
+		    	</li>
+			<?php endforeach ?>
+			
+		</ol>
+		
+		<input type="submit">
+		
+	</form>
 
 </div>
 
