@@ -3,15 +3,15 @@
 class Prog_lang_eval extends CI_Controller {
 	
 	private $review_mode = false;
-
-	public function index() {
 		
+	
+	public function welcome() {
 		$this->load->library('Test_parser');
 		
 		$xml = simplexml_load_file('assets/xml/tests/java_1.0.xml');
 		
 		$test = $this->test_parser->parse($xml);
-
+		
 		
 		$data['intro'] = $test->getIntro();
 		
