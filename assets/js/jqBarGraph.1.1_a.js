@@ -172,16 +172,18 @@
 				}
 				
  				for (i in valueData){
- 					heig = totalHeightBar*valueData[i]/maxe;
- 					wid = parseInt((fieldWidth-space)/valueData.length);
- 					sv = ''; // show values
- 					fs = 0; // font size
- 					if (arr.showValues){
- 						sv = arr.prefix+valueData[i]+arr.postfix;
- 						fs = 12; // font-size is 0 if showValues = false
+ 					if (valueData[i] > 0) { 
+ 	 					heig = totalHeightBar*valueData[i]/maxe;
+ 	 					wid = parseInt((fieldWidth-space)/valueData.length);
+ 	 					sv = ''; // show values
+ 	 					fs = 0; // font size
+ 	 					if (arr.showValues){
+ 	 						sv = arr.prefix+valueData[i]+arr.postfix;
+ 	 						fs = 12; // font-size is 0 if showValues = false
+ 	 					}
+ 	 					o = "<div class='subBars"+el.id+"' style='height:"+heig+"px; background-color: "+arr.colors[i]+"; left:"+wid*i+"px; color:"+arr.showValuesColor+"; font-size:"+fs+"px' >"+sv+"</div>";
+ 	 					$('#graphFieldBar'+unique).prepend(o);
  					}
- 					o = "<div class='subBars"+el.id+"' style='height:"+heig+"px; background-color: "+arr.colors[i]+"; left:"+wid*i+"px; color:"+arr.showValuesColor+"; font-size:"+fs+"px' >"+sv+"</div>";
- 					$('#graphFieldBar'+unique).prepend(o);
  				}
  			}
  			
@@ -234,7 +236,7 @@
 		legend = '';
 		for(var val in legendArr){
 	 			legend += "<div id='legend"+legendArr[val][3]+"' style='overflow: hidden; zoom: 1;'>";
-	 			legend += "<div class='legendBar"+legendArr[val][2]+"' id='legendColor"+legendArr[val][3]+"' style='background-color:"+legendArr[val][0]+"'></div>";
+	 			legend += "<div class='legendBar"+legendArr[val][2]+" "+legendArr[val][1]+"' id='legendColor"+legendArr[val][3]+"' style='background-color:"+legendArr[val][0]+"'></div>";
 	 			legend += "<div class='legendLabel"+legendArr[val][2]+"' id='graphLabel"+unique+"'>"+legendArr[val][1]+"</div>";
 	 			legend += "</div>";			
 		}
