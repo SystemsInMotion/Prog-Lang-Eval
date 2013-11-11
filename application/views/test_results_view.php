@@ -18,7 +18,7 @@
 	
 	Total Score: <?=$test->getTotalScore()?>
 	<br>
-	Questions Answered: <?=$test->getTotalAnswered()?> / <?=$test->getTotalQuestions()?> 
+	Questions Answered: <?=$test->getTotalAnswered()?> / <?=$test->getTotalQuestions()?> (<?=$test->getTotalDeclined()?> declined)
 	<br>
 	<br>
 	
