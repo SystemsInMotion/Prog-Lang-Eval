@@ -13,7 +13,7 @@ class Test_scorer {
 		else if ($correct === $expected){
 			return self::ALL_CORRECT_SCORE;
 		}
-		else if ($correct > 1){
+		else if ($correct > 0){
 			return self::PARTIAL_CORRECT_SCORE;
 		}
 	}
