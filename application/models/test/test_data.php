@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+include "test_level.php";
+
 class Test_data extends CI_Model {
 	
 	private $id;
@@ -8,7 +10,7 @@ class Test_data extends CI_Model {
 
 	private $intro;
 	private $questions;
-	private $questions_by_level;
+	private $levels;
 	
 	private $total_score;
 	
@@ -21,7 +23,7 @@ class Test_data extends CI_Model {
         
         $this->questions_answered = array();
 		
-		$this->questions_by_level = array();
+		$this->levels = array();
 		
 		$this->total_score = 0;
     }
@@ -53,16 +55,26 @@ class Test_data extends CI_Model {
     public function addQuestion(Test_question $question) {
     	$this->questions[$question->getId()] = $question;
     	
-    	$level =& $this->getLevel($question->getLevel());
-    	$level[$question->getId()] = $question;
+    	$level = $this->getLevel($question->getLevel());
+    	$level->addQuestion($question);
     }
     
-    public function &getLevel($level) {
-    	if (! array_key_exists($level, $this->questions_by_level)) {
-    		$this->questions_by_level[$level] = array();
+    public function getLevel($number) {
+    	if (! array_key_exists($number, $this->levels)) {
+    		$level = new Test_level();
+    		$this->levels[$number] = $level;
     	}
     	
-    	return $this->questions_by_level[$level];
+    	return $this->levels[$number];
+    }
+    
+    public function getLevels() {
+    	ksort($this->levels);
+    	return $this->levels;
+    }
+    
+    public function getLevelCount() {
+    	return count($this->levels);
     }
     
     public function getQuestions($shuffle = false) {
@@ -97,25 +109,20 @@ class Test_data extends CI_Model {
     }
     
     public function addDeclined($qid) {
-    	$this->questions_answered[$qid] = false;
+    	$this->questions_answered[$qid] = "declined";
     	
     	$question = $this->getQuestionById($qid);
     	$question->setDeclined(true);
     }
-    
-    public function getDeclined() {
-    	$answers = array_count_values($this->questions_answered);
-    	return $answers[false];
-    }
-    
+
     public function getTotalDeclined() {
     	$answers = array_count_values($this->questions_answered);
-    	return $answers[true];
+    	return $answers["declined"];
     }
     
     public function addAnswered($aid) {
     	$qid = $this->getQIDFromAID($aid);
-    	$this->questions_answered[$qid] = true;
+    	$this->questions_answered[$qid] = "answered";
     	
     	$question = $this->getQuestionById($qid);
     	$question->addGivenAnswer($aid);
@@ -126,7 +133,8 @@ class Test_data extends CI_Model {
     }
     
     public function getTotalAnswered() {
-    	return count($this->questions_answered);
+    	$answers = array_count_values($this->questions_answered);
+    	return $answers["answered"];
     }
     
     public function addScore($score) {
@@ -135,6 +143,54 @@ class Test_data extends CI_Model {
     
     public function getTotalScore() {
     	return $this->total_score;
+    }
+    
+    public function getScoreDistribution() {
+    	$all_scores = array();
+    	$all_levels = array();
+    	
+    	$max_level = 0;
+    	
+    	foreach ($this->questions as $question) {
+    		$this->_incrementValue($all_scores, (string)($question->getScore() + 10));
+    		
+    		$level_count = $this->_incrementValue($all_levels, $question->getLevel());
+    		
+    		$max_level = max($max_level, $level_count);
+    	}
+    	
+    	$levels = $this->_prepareScoreArray($all_scores, $all_levels);
+    	
+    	foreach ($this->questions as $question) {
+    		$levels[$question->getLevel()][(string)($question->getScore() + 10)]++;
+    	}
+    	
+    	ksort($levels);
+    	return $levels;
+    } 
+    
+    private function _prepareScoreArray($all_scores, $all_levels) {
+    	$scores = array();
+    	
+    	foreach ($all_levels as $number => $level_count) {
+    		$level = array();
+    		foreach ($all_scores as $score => $score_count) {
+    			$level[$score] = 0;
+    		}
+    		
+    		$scores[$number] = $level;
+    	}
+    	
+    	return $scores;
+    }
+    
+    private function _incrementValue(&$array, $key) {
+    	if (! array_key_exists($key, $array)) {
+    		$array[$key] = 0;
+    	}
+    	
+    	$array[$key]++;
+    	return $array[$key];
     }
 
 }

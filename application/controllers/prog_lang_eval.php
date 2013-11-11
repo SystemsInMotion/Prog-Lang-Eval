@@ -43,11 +43,43 @@ class Prog_lang_eval extends CI_Controller {
 		
 		$this->test_scorer->score($test, $answers);
 		
+		$data['graph_data'] = $this->_encodeForBarGraph($test->getScoreDistribution());
 		$data['test'] = $test;
 		
 		$this->load->view('test_results_view', $data);
 
 	}
+	
+	private function _encodeForBarGraph($levels) {
+    	$json = "new Array(\n";
+    	
+  		ksort($levels);
+    	
+    	$last_level = end(array_keys($levels));
+    	foreach ($levels as $level => $scores) {
+    		$json .= "[[";
+    		
+    		ksort($scores);
+    		
+    		$last_score = end(array_keys($scores));
+    		foreach ($scores as $score => $count) {
+    			$json .= $count;
+    			
+	    		if ($score !== $last_score) {
+	    			$json .= ",";
+			    }
+    		}
+    		
+    		$json .= "], 'Level $level']";
+    		if ($level !== $last_level) {
+    			$json .= ",";
+		    }
+		    $json .= "\n";
+    	}
+    	$json .= ")";
+    	
+    	return $json;	
+    }
 
 }
 

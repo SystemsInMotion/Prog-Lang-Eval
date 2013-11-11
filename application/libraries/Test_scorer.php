@@ -35,15 +35,18 @@ class Test_scorer {
 	}
 	
 	private function _scoreAnswers(Test_data &$test) {
-		foreach ($test->getQuestions() as $qid => $question) {
-			$score = self::_calculateScore(
-				$question->getCorrect(),
-				$question->getIncorrect(),
-				$question->getExpectedCorrect()
-			);
-			
-			$question->setScore($score);
-			$test->addScore($score);
+		foreach ($test->getLevels() as $level) {
+			foreach ($level->getQuestions() as $question) {
+				$score = self::_calculateScore(
+					$question->getCorrect(),
+					$question->getIncorrect(),
+					$question->getExpectedCorrect()
+				);
+				
+				$question->setScore($score);
+				$level->addScore($score);
+				$test->addScore($score);
+			}
 		}
 	}
 }

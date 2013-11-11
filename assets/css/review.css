@@ -1,0 +1,33 @@
+
+.level {
+	float: left;
+	position: relative;
+	height: 15em;
+}
+
+.level_result {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.level_score {
+	border: thin black solid;
+}
+
+.correct {
+	background-color: green;
+}
+
+.incorrect {
+	background-color: red;
+}
+
+.partial {
+	background-color: yellow;
+}
+
+
+#questions {
+	clear: both;
+}
