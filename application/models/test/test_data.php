@@ -145,7 +145,7 @@ class Test_data extends CI_Model {
     	return $this->total_score;
     }
     
-    public function getScoreDistribution() {
+    public function getScoreDistribution($possible_scores) {
     	$all_scores = array();
     	$all_levels = array();
     	
