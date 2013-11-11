@@ -1,17 +1,13 @@
 
 $(document).ready(function() {
 	
-	$('.level').each(function() { 
-		$(this).height($(this).data('questions')+"em");
-	});
+	var graphParams = {
+			data: scoreTableData, 
+			colors: ['red', 'white', 'green'], 
+			legend: true, 
+			legends: ['Incorrect', 'Declined', 'Partial', 'Correct']
+	};
 	
-	$('.level_result').each(function() { 
-		$(this).height($(this).data('questions')+"em");
-	});
-
-	$('.level_score').each(function() { 
-		$(this).height($(this).data('count')+"em");
-	 });
-	
+	$('#levels').jqBarGraph(graphParams); 
 	
 });

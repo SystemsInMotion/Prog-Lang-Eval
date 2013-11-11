@@ -31,21 +31,7 @@
 	
 	<fieldset id="levels" data-levels="<?=$test->getLevelCount()?>">
 		<legend>Score by Level</legend>
-		
-		<?php foreach($test->getLevels() as $number => $level): ?>
-			<div class="level">
-				<?=$number?>: <?=$level->getScore()?> (<?=$level->getTotalQuestions()?>)
-				<div class="level_result" data-questions="<?=$level->getTotalQuestions()?>">
-					
-					<?php foreach($level->getScoreDistribution() as $score => $count): ?>
-						<div class="level_score" data-score="<?=$score?>" data-count="<?=$count?>">
-							<?=$score?>: <?=$count?>
-						</div>
-					<?php endforeach ?>
-					
-				</div>
-			</div>
-		<?php endforeach ?>
+
 		
 	</fieldset>
 	
