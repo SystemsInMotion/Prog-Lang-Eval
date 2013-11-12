@@ -4,6 +4,11 @@ class Prog_lang_eval extends CI_Controller {
 	
 	private $review_mode = true;
 	
+	public function __construct() {
+		parent::__construct();
+	
+		$this->load->database();	
+	}
 	public function welcome() {
 		$this->load->library('Test_parser');
 		
