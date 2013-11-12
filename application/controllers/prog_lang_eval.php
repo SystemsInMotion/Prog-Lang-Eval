@@ -9,7 +9,8 @@ class Prog_lang_eval extends CI_Controller {
 	
 		$this->load->database();	
 	}
-	public function welcome() {
+	
+	public function test() {
 		$this->load->library('Test_parser');
 		
 		$xml = simplexml_load_file('assets/xml/tests/java_2.1.xml');
@@ -28,6 +29,23 @@ class Prog_lang_eval extends CI_Controller {
 		
 		
 		$this->load->view('prog_lang_eval_view', $data);
+	}
+	
+	public function welcome() {
+	
+		$code = $this->input->post('code');
+		
+		$this->load->model('Candidate_test');
+		
+		$found = $this->Candidate_test->findByCode($code);
+		
+		if (! $found) {
+			$data['error'] = true;
+			$this->load->view('start_view', $data);
+		}
+		else {
+			echo 'Welcome, '.$this->Candidate_test->getCandidate()->getName();
+		}
 	}
 
 	public function index() {
