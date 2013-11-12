@@ -8,6 +8,8 @@ class Candidate extends CI_Model {
 	
 	private $lname;
 	
+	private $id;
+	
 	function __construct() {
 		parent::__construct();
 
@@ -17,6 +19,7 @@ class Candidate extends CI_Model {
     	$query = $this->db->get_where($this->table, array('id' => $id));
     	
     	if ($query->num_rows() != 1) {
+    		echo ("candidate by id ($id) not found");
     		return false;
     	}
 		else {
@@ -24,6 +27,7 @@ class Candidate extends CI_Model {
 		
 		   $this->fname = $row->first_name;
 		   $this->lname = $row->last_name;
+		   $this->id = $row->id;
 		   
 		   return true;
 		}
@@ -32,6 +36,10 @@ class Candidate extends CI_Model {
 	public function getName() {
 		return $this->fname . ' ' . $this->lname;
 	}
+	
+	public function getId() {
+    	return $this->id;
+    }
 
 }
 
