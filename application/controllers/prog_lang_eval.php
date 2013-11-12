@@ -7,7 +7,7 @@ class Prog_lang_eval extends CI_Controller {
 	public function welcome() {
 		$this->load->library('Test_parser');
 		
-		$xml = simplexml_load_file('assets/xml/tests/java_1.0.xml');
+		$xml = simplexml_load_file('assets/xml/tests/java_2.1.xml');
 		
 		$test = $this->test_parser->parse($xml);
 		
@@ -33,7 +33,7 @@ class Prog_lang_eval extends CI_Controller {
 		
 		$this->load->library('Test_parser');
 		
-		$xml = simplexml_load_file('assets/xml/tests/java_1.0.xml');
+		$xml = simplexml_load_file('assets/xml/tests/java_2.1.xml');
 		
 		$test = $this->test_parser->parse($xml);
 		
