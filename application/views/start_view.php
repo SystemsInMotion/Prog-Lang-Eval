@@ -20,7 +20,8 @@
 				rgba(255, 255, 255, 0.6));
 		}
 		
-		form {
+		form, 
+		#error {
 			font-family: sans-serif;
 			font-weight: bold;
 			
@@ -28,14 +29,31 @@
 			border-radius: 1em;
 			
 			position: fixed;
+
+			text-align: center;
+			border: thick #555 solid;
+			
+			width: 28em;
+			left: 50%;
+			margin-left: -16em; 
+		}
+		
+		#error {
+			padding: 2em;
+			
+			background-color: yellow;
+			
+			height: 3em;
+			top: 1em;
+		}
+		
+		form {
 			top: 50%;
 			left: 50%;
 			width: 22em;
 			height: 10em;
 			margin-top: -10em;
 			margin-left: -16em;
-			text-align: center;
-			border: thick #555 solid;
 			
 			background-color: white;
 			
@@ -55,7 +73,7 @@
 		<div id="error">
 			Sorry, your candidate code was not recognized.
 			<br>
-			Please try again or ask the test proctor or your recruiter for assistance.
+			Please try again or ask for assistance.
 		</div>
 	<?php endif ?>
 
