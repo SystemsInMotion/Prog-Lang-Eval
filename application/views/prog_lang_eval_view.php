@@ -81,9 +81,10 @@
 	<form id="exam" action="submit" method="post">
 	
 		<ol id="questions">
+			<?php $qnum = 1?>
 		
 			<?php foreach ($questions as $qid => $question): ?>
-		    	<li class="question">
+		    	<li class="question" data-number="<?=$qnum?>">
 		    		<?php if ($review): ?>
 		    			<div class="review">
 		    				Original Question #: <?=$qid?><br>
@@ -128,6 +129,8 @@
 		    					<div style="clear:both"></div>
 		    				</li>
 		    			<?php endforeach ?>
+		    			
+		    			<?php $qnum++; ?>
 		    		</ol>
 		    		
 		    		<div class="decline">
