@@ -31,3 +31,46 @@
 #questions {
 	clear: both;
 }
+.subBarslevels {
+	font-weight: bold;
+}
+
+.graphBarlevels,
+.legendBarlevels {
+	border: 2px gray solid;
+}
+
+.graphValuelevels {
+	display: none;
+}
+
+.Correct {
+	background-color: green;
+	color: white;
+}
+
+.Incorrect {
+	background-color: red;
+	color: white;
+}
+
+.Partial {
+	background-color: yellow;
+	color: black;
+}
+
+.Declined {
+	background-color: white;
+	color: black;
+	
+	background-size: 12px 12px;
+	background-image: linear-gradient(
+		-45deg, 
+		#EEE 25%, 
+		transparent 25%, 
+		transparent 50%, 
+		#EEE 50%, 
+		#EEE 75%, 
+		transparent 75%, 
+		transparent);
+}

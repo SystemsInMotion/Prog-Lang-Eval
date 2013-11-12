@@ -2,10 +2,9 @@
 $(document).ready(function() {
 	
 	var graphParams = {
-			data: scoreTableData, 
-			colors: ['red', 'white', 'green'], 
+			data: scoreTableData,
 			legend: true, 
-			legends: ['Incorrect', 'Declined', 'Partial', 'Correct']
+			legends: ['Incorrect', 'Partial', 'Correct', 'Declined']
 	};
 	
 	$('#levels').jqBarGraph(graphParams); 
