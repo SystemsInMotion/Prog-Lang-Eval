@@ -26,7 +26,9 @@ class Prog_lang_eval extends CI_Controller {
 	}
 
 	public function index() {
-
+		
+		$data['error'] = false;
+		$this->load->view('start_view', $data);
 	}
 
 	public function submit() {
