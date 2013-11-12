@@ -146,51 +146,35 @@ class Test_data extends CI_Model {
     }
     
     public function getScoreDistribution($possible_scores) {
-    	$all_scores = array();
     	$all_levels = array();
     	
-    	$max_level = 0;
-    	
+    	//Create a prototype array for the scores of an individual level
+		$level_scores = array();
+		foreach ($possible_scores as $score) {
+			$converted = $this->_convertScore($score);
+			$level_scores[$converted] = 0;
+		}
+    	    	
     	foreach ($this->questions as $question) {
-    		$this->_incrementValue($all_scores, (string)($question->getScore() + 10));
+    		$level_number = $question->getLevel();
     		
-    		$level_count = $this->_incrementValue($all_levels, $question->getLevel());
-    		
-    		$max_level = max($max_level, $level_count);
-    	}
-    	
-    	$levels = $this->_prepareScoreArray($all_scores, $all_levels);
-    	
-    	foreach ($this->questions as $question) {
-    		$levels[$question->getLevel()][(string)($question->getScore() + 10)]++;
-    	}
-    	
-    	ksort($levels);
-    	return $levels;
-    } 
-    
-    private function _prepareScoreArray($all_scores, $all_levels) {
-    	$scores = array();
-    	
-    	foreach ($all_levels as $number => $level_count) {
-    		$level = array();
-    		foreach ($all_scores as $score => $score_count) {
-    			$level[$score] = 0;
+    		//Initialize the level if it hasn't been already
+    		if (! array_key_exists($level_number, $all_levels)) {
+    			$all_levels[$level_number] = $level_scores;	
     		}
     		
-    		$scores[$number] = $level;
+    		$score = $this->_convertScore($question->getScore());
+    		$all_levels[$level_number][$score]++;
     	}
     	
-    	return $scores;
-    }
+    	ksort($all_levels);
+    	return $all_levels;
+    } 
     
-    private function _incrementValue(&$array, $key) {
-    	if (! array_key_exists($key, $array)) {
-    		$array[$key] = 0;
-    	}
-    	
-    	$array[$key]++;
-    	return $array[$key];
+    //We have to convert the fractional scores to be all positive integers to use as index keys
+    private function _convertScore($score) {
+    	$converted = ($score + 1) * 2;
+    	return (string) $converted;	
     }
 
 }
