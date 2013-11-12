@@ -83,7 +83,7 @@ class Test_question extends CI_Model {
     		return null;
     	}
     }
-    
+
     public function hasMultipleAnswers() {
     	return $this->expected_correct > 1;
     }
