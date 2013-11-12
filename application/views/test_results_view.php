@@ -35,12 +35,38 @@
 		
 	</fieldset>
 	
-	<div id="questions">
-		<?php foreach($test->getQuestions() as $question): ?>
-			<?=$question->getId()?>: 
-			<?=$question->isDeclined()? "declined" : $question->getScore()?>
-		<br>
+	<fieldset id="questions">
+		<legend>Results by Question</legend>
+		
+		<table>
+			<tr>
+				<th colspan="3">Question</th>
+				<th colspan="3">{User}'s Results</th>
+			</tr>
+			<tr>
+				<th>Number</th>
+				<th>Difficulty Level</th>
+				<th>Expected Answers</th>
 			
+				<th>Score</th>
+				<th>Correct Answers</th>
+				<th>Incorrect Answers</th>
+			</tr>
+		<?php foreach($test->getQuestions() as $question): ?>
+			<tr>
+				<td><?=strtoupper($question->getId())?></td>
+				<td><?=$question->getLevel()?></td>
+				<td><?=$question->getExpectedCorrect()?></td>
+				
+				<?php if($question->isDeclined()): ?>
+					<td colspan="3">Declined</td>
+				<?php else: ?>
+					<td><?=$question->getScore()?></td>
+					<td><?=$question->getCorrect()?></td>
+					<td><?=$question->getIncorrect()?></td>
+				<?php endif ?>
+								
+			</tr>
 		<?php endforeach ?>
 	</div>
 

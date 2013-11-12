@@ -27,10 +27,42 @@
 	background-color: yellow;
 }
 
-
 #questions {
 	clear: both;
+	width: 32em;
 }
+
+#questions table {
+	border-collapse: collapse;
+}
+
+#questions tr {
+	border-top: 2px gray solid;
+}
+
+#questions tr:first-child {
+	border-top: none;
+}
+
+#questions th {
+	vertical-align: top;
+}
+
+#questions td {
+	text-align: center;
+}
+
+#questions th,
+#questions td {
+	border-left: 1px gray solid;
+	width: 16%;
+}
+
+#questions th:first-child,
+#questions td:first-child {
+	border-left: none;
+}
+
 .subBarslevels {
 	font-weight: bold;
 }
