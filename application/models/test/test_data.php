@@ -5,8 +5,8 @@ include "test_level.php";
 class Test_data extends CI_Model {
 	
 	private $id;
-	
 	private $type;
+	private $name;
 
 	private $intro;
 	private $questions;
@@ -42,6 +42,14 @@ class Test_data extends CI_Model {
     
     public function getType() {
     	return $this->type;
+    }
+    
+    public function setName($name) {
+    	$this->name = $name;	
+    }
+    
+    public function getName() {
+    	return $this->name;
     }
     
     public function setIntro($intro) {

@@ -5,6 +5,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://www.systemsinmotion.com/hiring/technical/progLangEvalTestData.xsd assets/xml/tests/progLangEvalTestData.xsd ">
 
+	<ple:name>
+		Java Proficiency Evaluation
+	</ple:name>
+
 	<ple:intro>
 		Hi!
 		

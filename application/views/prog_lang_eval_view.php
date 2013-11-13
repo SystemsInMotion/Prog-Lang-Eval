@@ -76,6 +76,11 @@
 			</fieldset>			
 		<?php endif ?>	
 	
+
+<div id="main">
+	
+	<div id="name">
+		<?=$test_name?>
 	</div>
 	
 	<form id="exam" action="submit" method="post">

@@ -20,6 +20,7 @@ class Test_parser {
 		$test->setIntro((string)$ple->intro);
 		$test->setId($ple->attributes()->id);
 		$test->setType($ple->attributes()->type);
+		$test->setName((string)$ple->name);
   		
   		foreach ($ple->questions->question as $question_data) {
   			$question = $this->_parseQuestion($question_data);  

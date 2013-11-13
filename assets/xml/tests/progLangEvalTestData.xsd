@@ -5,6 +5,7 @@
     
     <complexType name="test">
     	<sequence>
+    		<element name="name" type="string"></element>
     		<element name="intro" type="string"></element>
     		<element name="questions" type="ple:questions"></element>
     	</sequence>
