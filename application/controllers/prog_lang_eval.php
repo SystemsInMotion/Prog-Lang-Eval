@@ -2,33 +2,32 @@
 
 class Prog_lang_eval extends CI_Controller {
 	
-	private $review_mode = true;
-	
 	public function __construct() {
 		parent::__construct();
 	
-		$this->load->database();	
+		$this->load->database();
+		$this->load->library('session');	
 	}
 	
-	public function test() {
-		$this->load->library('Test_parser');
+	private function _prepare_test(Candidate_test $ctest, $review_mode) {
+		$file = $ctest->getTest()->getFilename();
 		
-		$xml = simplexml_load_file('assets/xml/tests/java_2.1.xml');
+		$xml = simplexml_load_file('assets/xml/tests/'.$file);
+		
+		$this->load->library('Test_parser');
 		
 		$test = $this->test_parser->parse($xml);
 		
+		$data['candidate'] = $ctest->getCandidate()->getName();
+		$data['test_name'] = $test->getName();
 		
 		$data['intro'] = $test->getIntro();
+		$data['questions'] = $test->getQuestions(true);
 		
-		$shuffle = ( ! $this->review_mode);
-		$data['shuffle'] = $shuffle;
+		$data['shuffle'] = ! $review_mode;
+		$data['review'] = $review_mode;		
 		
-		$data['questions'] = $test->getQuestions($shuffle);
-		
-		$data['review'] = $this->review_mode;
-		
-		
-		$this->load->view('prog_lang_eval_view', $data);
+		return $data;
 	}
 	
 	public function welcome() {
@@ -44,7 +43,11 @@ class Prog_lang_eval extends CI_Controller {
 			$this->load->view('start_view', $data);
 		}
 		else {
-			echo 'Welcome, '.$this->Candidate_test->getCandidate()->getName();
+			$this->session->set_userdata(array('code' => $code));
+			
+			$data = $this->_prepare_test($this->Candidate_test, false);
+
+			$this->load->view('prog_lang_eval_view', $data);
 		}
 	}
 
