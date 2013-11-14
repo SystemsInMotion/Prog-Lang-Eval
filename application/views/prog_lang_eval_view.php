@@ -12,15 +12,19 @@
 
 </head>
 <body>
-
-<div id="main">
-
-	<div id="intro">
 	
-		
+<div id="overlay"></div>
+
+<div id="intro">
+
+	<div class="button">
+	
+	</div>
+	
+	<div class="contents">
+	
 		<fieldset id="key">
-			<legend>Scoring Key</legend>
-			
+			<legend>Scoring</legend>
 			
 			<table>
 				<tr>
@@ -58,7 +62,7 @@
 						<em>No question will score more than <span class="correct"><strong>+ 1</strong></span> or less than <span class="incorrect"><strong>- &frac12;</span>
 					</td> 	
 				</tr>
-			</table>	
+			</table>
 		</fieldset>
 		
 		<?php if ($review): ?>
@@ -76,6 +80,9 @@
 			</fieldset>			
 		<?php endif ?>	
 	
+	</div>
+
+</div>
 
 <div id="main">
 	
