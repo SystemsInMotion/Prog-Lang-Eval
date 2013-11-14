@@ -3,6 +3,7 @@
 class Test_answer extends CI_Model {
 
 	private $id;
+	private $uid;
 
 	private $text;
 	
@@ -25,6 +26,14 @@ class Test_answer extends CI_Model {
     
     public function getId() {
     	return $this->id;
+    }
+    
+    public function setUid($uid) {
+    	$this->uid = $uid;
+    }
+    
+    public function getUid() {
+    	return $this->uid;
     }
     
     public function setText($text) {

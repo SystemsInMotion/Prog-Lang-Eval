@@ -34,14 +34,13 @@ class Test_scorer {
 	
 	public function score(Test_data $test, $answers) {
 	
-		foreach($answers as $id => $given) {
-			$qid = $test->getQIDFromAID($id);
-			
+		foreach($answers as $qid => $given) {
+		
 			if ($given === "decline") {
 				$test->addDeclined($qid);
 			}
 			else {
-				$test->addAnswered($given);
+				$test->addGivenAnswers($qid, $given);
 			}
 		}
 		

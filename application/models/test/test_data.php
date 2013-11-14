@@ -111,11 +111,6 @@ class Test_data extends CI_Model {
     	return count($this->questions);
     }
     
-    public static function getQIDFromAID($aid) {
-		$ids = explode("_", $aid);
-		return $ids[0];
-    }
-    
     public function addDeclined($qid) {
     	$this->questions_answered[$qid] = "declined";
     	
@@ -128,12 +123,13 @@ class Test_data extends CI_Model {
     	return $answers["declined"];
     }
     
-    public function addAnswered($aid) {
-    	$qid = $this->getQIDFromAID($aid);
+    public function addGivenAnswers($qid, $given) {
     	$this->questions_answered[$qid] = "answered";
     	
     	$question = $this->getQuestionById($qid);
-    	$question->addGivenAnswer($aid);
+    	foreach ($given as $aid) {
+    		$question->addGivenAnswer($aid);
+    	}
     }
     
     public function getAnswered() {
