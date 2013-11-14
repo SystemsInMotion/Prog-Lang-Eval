@@ -31,5 +31,34 @@ $(document).ready( function() {
 		return false;
 	});
 
+	$('#intro').click(toggleIntro);
 	
 });
+
+function toggleIntro() {
+	if ($('#intro').hasClass('min')) {
+		showIntro();
+	}
+	else {
+		hideIntro();
+	}
+}
+
+function showIntro() {
+	$('#intro').removeClass('min').removeAttr('style');
+	$('#intro').find('*').removeAttr('style');
+	$('#overlay').show();
+}
+
+function hideIntro() {
+	var complete = function() {
+		$('#intro').addClass('min');
+	};
+	
+	var attr = {width: '10em', height: '1em', left: 0, 'margin-left': 0, 'margin-top': '-1em', padding: '0.5em'};
+	
+	$('#intro .contents').animate({'font-size': 0});
+	$('#intro').animate(attr, complete);
+	$('#overlay').fadeOut();
+	
+}
