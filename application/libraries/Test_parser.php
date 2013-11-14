@@ -4,6 +4,8 @@ class Test_parser {
 	
 	private static $namespace_prefix = 'ple';
 	
+	private static $qid_aid_separator = '_';
+	
 	private $CI;
 	
 	public function __construct() {
@@ -41,7 +43,7 @@ class Test_parser {
 		
 		$question->setText($this->_innerHTML($question_data->text));
 
-		$question->setId('q' . (string)$question_data->attributes()->id);
+		$question->setId((string)$question_data->attributes()->id);
 		$question->setLevel((string)$question_data->attributes()->level);
 		
 		foreach ($question_data->answers->answer as $answer_data) {
@@ -58,8 +60,9 @@ class Test_parser {
 		$answer = $this->CI->Test_answer;
 		
 		$answer = new Test_answer();
-			
-		$answer->setId($question_id . '_a' . $answer_data->attributes()->id);
+		
+		$answer->setId((string)$answer_data->attributes()->id);	
+		$answer->setUid($question_id . '_' . $answer_data->attributes()->id);
 		$correct = (string)$answer_data->attributes()->correct;
 		$answer->setCorrect($correct === "true");
   				
@@ -74,6 +77,11 @@ class Test_parser {
   		
   		return $data;
 	}
+	
+	public static function getQIDFromAID($aid) {
+		$ids = explode(self::$qid_aid_separator, $aid);
+		return $ids[0];
+    }
 	
 	private function _innerHTML(SimpleXMLElement $el) {
 		$xml = $el->asXML();
