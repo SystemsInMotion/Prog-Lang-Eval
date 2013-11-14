@@ -33,6 +33,10 @@ snippet strong {
 	color: black;
 }
 
+#questions {
+	z-index: -1;
+}
+
 #questions .answers {
 	list-style-type: upper-alpha;
 	border-bottom: thin solid gray;
@@ -111,6 +115,15 @@ snippet strong {
 
 .answer section {
 	display: inline-table;
+}
+
+#name {
+	font-style: italic;
+	font-size: 2em;
+	font-weight: bold;
+	margin: 1em;
+	padding: 1em;
+	text-align: center;
 }
 
 #intro {
