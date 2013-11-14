@@ -121,13 +121,11 @@
 		    				<li class="answer">
 		    				
 		    					<section class="input">
-			    					<input 
-				    					id="<?=$answer->getId()?>"
-				 		    			<?= $question->hasMultipleAnswers()?
-						    				'type="checkbox" name="' .$aid. '"' :
-						    				'type="radio" name="' .$qid. '"'
+			    					<input
+			    						<?= $question->hasMultipleAnswers()?
+						    				'type="checkbox"' : 'type="radio"' 
 						    			?> 
-						    			value="<?=$aid?>"
+						    			id="<?=$answer->getUid()?>" name="<?=$qid?>[]" value="<?=$aid?>"
 						    			<?php if ($review && $answer->isCorrect()): ?>
 						    				checked="checked"
 						    			<?php endif ?>
@@ -135,7 +133,7 @@
 						    	</section>
 				    			
 				    			<section class="label">
-		    						<label for="<?=$aid?>"><?=$answer->getText()?></label>
+		    						<label for="<?=$answer->getUid()?>"><?=$answer->getText()?></label>
 		    					</section>
 		    					
 		    					<div style="clear:both"></div>
@@ -159,6 +157,10 @@
 	</form>
 
 </div>
+
+<footer>
+	<?=$version?>
+</footer>
 
 </body>
 </html>
